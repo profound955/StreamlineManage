@@ -1,0 +1,978 @@
+﻿
+namespace CVC.ModuleManagement {
+    export interface ViewsRow {
+        ViewsId?: number;
+        ModuleId?: number;
+        ViewName?: string;
+        IsAccessFieldWise?: boolean;
+        StatusId?: number;
+        CreatedBy?: number;
+        CreatedDate?: string;
+        UpdatedBy?: number;
+        UpdatedDate?: string;
+        IsMachineSettings?: boolean;
+        IsMachineSummary?: boolean;
+        IslabelRoll?: boolean;
+        IsCommandPanel?: boolean;
+        IsFactorySetting?: boolean;
+        DisplayObjectTypeId?: number;
+        MachineId?: number;
+        ListDisplayId?: number;
+        FormDisplayId?: number;
+        ButtonDisplayId?: number;
+        RealtimeParameterDisplayId?: number;
+        LineChartDisplayId?: number;
+        PieChartDisplayId?: number;
+        TreeDisplayId?: number;
+        AttachmentDisplayId?: number;
+        AlarmDisplayId?: number;
+        NotificationDisplayId?: number;
+        ContainerDisplayId?: number;
+        ViewsModuleId?: number;
+        ViewsViewName?: string;
+        ViewsIsAccessFieldWise?: boolean;
+        ViewsStatusId?: number;
+        ViewsCreatedBy?: number;
+        ViewsCreatedDate?: string;
+        ViewsUpdatedBy?: number;
+        ViewsUpdatedDate?: string;
+        ViewsIsMachineSettings?: boolean;
+        ViewsIsMachineSummary?: boolean;
+        ViewsIslabelRoll?: boolean;
+        ViewsIsCommandPanel?: boolean;
+        ViewsIsFactorySetting?: boolean;
+        ViewsDisplayObjectTypeId?: number;
+        ViewsMachineId?: number;
+        ViewsListDisplayId?: number;
+        ViewsFormDisplayId?: number;
+        ViewsButtonDisplayId?: number;
+        ViewsRealtimeParameterDisplayId?: number;
+        ViewsLineChartDisplayId?: number;
+        ViewsPieChartDisplayId?: number;
+        ViewsTreeDisplayId?: number;
+        ViewsAttachmentDisplayId?: number;
+        ViewsAlarmDisplayId?: number;
+        ViewsNotificationDisplayId?: number;
+        ViewsContainerDisplayId?: number;
+        ModuleModuleName?: string;
+        ModuleMachineId?: number;
+        ModuleStatusId?: number;
+        ModuleCreatedBy?: number;
+        ModuleCreatedDate?: string;
+        ModuleUpdatedBy?: number;
+        ModuleUpdatedDate?: string;
+        ModuleSequence?: number;
+        ModuleEquipmentId?: string;
+        ModuleSerialNumber?: string;
+        StatusStatusName?: string;
+        CreatedByEmployeeId?: string;
+        CreatedByFirstName?: string;
+        CreatedByLastName?: string;
+        CreatedByDepartmentId?: number;
+        CreatedByDesignation?: string;
+        CreatedByMobileCode?: number;
+        CreatedByMobileNumber?: number;
+        CreatedByEmail?: string;
+        CreatedByUsername?: string;
+        CreatedByPasswordHash?: string;
+        CreatedByPasswordSalt?: string;
+        CreatedByUserImage?: string;
+        CreatedByAddress?: string;
+        CreatedByCityId?: number;
+        CreatedByPinCode?: string;
+        CreatedByRoleId?: number;
+        CreatedByPasswordExpiryDate?: string;
+        CreatedByIsForgotPassword?: boolean;
+        CreatedByIsPasswordChangeOnLogin?: boolean;
+        CreatedByIsUserHidden?: boolean;
+        CreatedByBirthDate?: string;
+        CreatedByStatusId?: number;
+        CreatedBy1?: number;
+        CreatedByCreatedDate?: string;
+        CreatedByUpdatedBy?: number;
+        CreatedByUpdatedDate?: string;
+        CreatedByQuestionId?: number;
+        CreatedByQuestionAns?: string;
+        CreatedByIsLockOut?: boolean;
+        CreatedByLockOutDateTime?: string;
+        CreatedByLogInAttempt?: number;
+        CreatedByIsActiveDirectory?: boolean;
+        CreatedByMachineId?: string;
+        CreatedByRecordAddedSource?: string;
+        UpdatedByEmployeeId?: string;
+        UpdatedByFirstName?: string;
+        UpdatedByLastName?: string;
+        UpdatedByDepartmentId?: number;
+        UpdatedByDesignation?: string;
+        UpdatedByMobileCode?: number;
+        UpdatedByMobileNumber?: number;
+        UpdatedByEmail?: string;
+        UpdatedByUsername?: string;
+        UpdatedByPasswordHash?: string;
+        UpdatedByPasswordSalt?: string;
+        UpdatedByUserImage?: string;
+        UpdatedByAddress?: string;
+        UpdatedByCityId?: number;
+        UpdatedByPinCode?: string;
+        UpdatedByRoleId?: number;
+        UpdatedByPasswordExpiryDate?: string;
+        UpdatedByIsForgotPassword?: boolean;
+        UpdatedByIsPasswordChangeOnLogin?: boolean;
+        UpdatedByIsUserHidden?: boolean;
+        UpdatedByBirthDate?: string;
+        UpdatedByStatusId?: number;
+        UpdatedByCreatedBy?: number;
+        UpdatedByCreatedDate?: string;
+        UpdatedBy1?: number;
+        UpdatedByUpdatedDate?: string;
+        UpdatedByQuestionId?: number;
+        UpdatedByQuestionAns?: string;
+        UpdatedByIsLockOut?: boolean;
+        UpdatedByLockOutDateTime?: string;
+        UpdatedByLogInAttempt?: number;
+        UpdatedByIsActiveDirectory?: boolean;
+        UpdatedByMachineId?: string;
+        UpdatedByRecordAddedSource?: string;
+        MachineMachineLineId?: number;
+        MachineMachineName?: string;
+        MachineModelNumber?: string;
+        MachineSerialNumber?: string;
+        MachineMake?: string;
+        MachineYear?: number;
+        MachinePlcMake?: string;
+        MachinePlcModelNumber?: string;
+        MachinePlcSerialNumber?: string;
+        MachinePlcAddress?: string;
+        MachineAccessIpAddress?: string;
+        MachineMachineSequence?: number;
+        MachineMachineImage?: number[];
+        MachineMachineTypeId?: number;
+        MachineStatusId?: number;
+        MachineDescription?: string;
+        MachineCreatedBy?: number;
+        MachineCreatedDate?: string;
+        MachineUpdatedBy?: number;
+        MachineUpdatedDate?: string;
+        MachineEquipmentId?: string;
+        MachineTimerForAlarm?: number;
+        MachineIsactive?: boolean;
+        MachineIsShowStatistics?: boolean;
+        MachineRecordAddedSource?: string;
+        MachineIsRealTime?: boolean;
+        MachineTableId?: number;
+        MachineTableName?: string;
+        ListDisplayBackgroundColor?: string;
+        ListDisplayBorderStyle?: number;
+        ListDisplayCheckbox?: boolean;
+        ListDisplayFont?: string;
+        ListDisplayFontColor?: string;
+        ListDisplayFontSize?: number;
+        ListDisplayFullRowSelect?: boolean;
+        ListDisplayGridlines?: boolean;
+        ListDisplayUseWaitCursorOnClick?: boolean;
+        ListDisplayActivation?: number;
+        ListDisplayAlignment?: number;
+        ListDisplaySortingType?: number;
+        ListDisplaySortAscDesc?: boolean;
+        ListDisplayMultiSelect?: boolean;
+        ListDisplayAutoResize?: boolean;
+        ListDisplayCollapsible?: boolean;
+        ListDisplayViewId?: number;
+        ListDisplayListDisplayName?: string;
+        FormDisplayFormDisplayName?: string;
+        FormDisplayBackgroundColor?: string;
+        FormDisplayBorderStyle?: number;
+        FormDisplayIsCheckbox?: boolean;
+        FormDisplayFont?: string;
+        FormDisplayFontColorSelected?: string;
+        FormDisplayFontColorUnselected?: string;
+        FormDisplayActivation?: number;
+        FormDisplayAlignment?: number;
+        FormDisplayIsTooltip?: boolean;
+        FormDisplayIsHorizontalScrollBar?: boolean;
+        FormDisplayIsVerticalScrollBar?: boolean;
+        FormDisplayIsCollapsible?: boolean;
+        ButtonDisplayButtonDisplayName?: string;
+        ButtonDisplayBackgroundColor?: string;
+        ButtonDisplayBorderStyle?: number;
+        ButtonDisplayFont?: string;
+        ButtonDisplayFontColorSelected?: string;
+        ButtonDisplayFontColorUnselected?: string;
+        ButtonDisplayActivation?: number;
+        ButtonDisplayAlignment?: number;
+        ButtonDisplayIsTooltip?: boolean;
+        ButtonDisplayIsHorizontalScrollBar?: boolean;
+        ButtonDisplayIsVerticalScrollBar?: boolean;
+        ButtonDisplayIsCollapsible?: boolean;
+        RealtimeParameterDisplayRealtimeParameterDisplayName?: string;
+        RealtimeParameterDisplayBackgroundColor?: string;
+        RealtimeParameterDisplayBorderStyle?: number;
+        RealtimeParameterDisplayFont?: string;
+        RealtimeParameterDisplayFontColor?: string;
+        RealtimeParameterDisplayAlignment?: number;
+        RealtimeParameterDisplayIsTooltip?: boolean;
+        RealtimeParameterDisplayIsHorizontalScrollBar?: boolean;
+        RealtimeParameterDisplayIsVerticalScrollBar?: boolean;
+        RealtimeParameterDisplayIsCollapsible?: boolean;
+        LineChartDisplayLineChartDisplayName?: string;
+        LineChartDisplayBackgroundColor?: string;
+        LineChartDisplayBorderStyle?: number;
+        LineChartDisplayFont?: string;
+        LineChartDisplayFontColor?: string;
+        LineChartDisplayAlignment?: number;
+        LineChartDisplayIsTooltip?: boolean;
+        LineChartDisplayIsHorizontalScrollBar?: boolean;
+        LineChartDisplayIsVerticalScrollBar?: boolean;
+        LineChartDisplayIsCollapsible?: boolean;
+        LineChartDisplayIsLegends?: boolean;
+        LineChartDisplayIsGridlines?: boolean;
+        LineChartDisplayGridlineColor?: string;
+        LineChartDisplayIsRealtime?: boolean;
+        LineChartDisplayAxisColor?: string;
+        PieChartDisplayPieChartDisplayName?: string;
+        PieChartDisplayBackgroundColor?: string;
+        PieChartDisplayBorderStyle?: number;
+        PieChartDisplayFont?: string;
+        PieChartDisplayFontColor?: string;
+        PieChartDisplayIsLegends?: boolean;
+        PieChartDisplayLegendFontSize?: number;
+        PieChartDisplayIsShowValuesAsPercentage?: boolean;
+        PieChartDisplayIsShowTotal?: boolean;
+        PieChartDisplayAlignment?: number;
+        PieChartDisplayIsTooltip?: boolean;
+        PieChartDisplayIsHorizontalScrollBar?: boolean;
+        PieChartDisplayIsVerticalScrollBar?: boolean;
+        PieChartDisplayIsRealtime?: boolean;
+        TreeDisplayTreeDisplayName?: string;
+        TreeDisplayBackgroundColor?: string;
+        TreeDisplayBorderStyle?: number;
+        TreeDisplayFont?: string;
+        TreeDisplayFontColor?: string;
+        TreeDisplayIsFullRowSelect?: boolean;
+        TreeDisplayLineColor?: string;
+        TreeDisplayDefaultView?: number;
+        TreeDisplayAlignment?: number;
+        TreeDisplayIsTooltip?: boolean;
+        TreeDisplayIsHorizontalScrollBar?: boolean;
+        TreeDisplayIsVerticalScrollBar?: boolean;
+        TreeDisplayIsRealtime?: boolean;
+        AttachmentDisplayAttachmentDisplayName?: string;
+        AttachmentDisplayBackgroundColor?: string;
+        AttachmentDisplayBorderStyle?: number;
+        AttachmentDisplayIsCheckbox?: boolean;
+        AttachmentDisplayFont?: string;
+        AttachmentDisplayFontColorSelected?: string;
+        AttachmentDisplayFontColorUnselected?: string;
+        AttachmentDisplayActivation?: number;
+        AttachmentDisplayIsOpenInNewWindow?: boolean;
+        AttachmentDisplayIsTooltip?: boolean;
+        AttachmentDisplayIsHorizontalScrollBar?: boolean;
+        AttachmentDisplayIsVerticalScrollBar?: boolean;
+        AttachmentDisplayAlignment?: number;
+        AttachmentDisplayIsFolderBrowse?: boolean;
+        AttachmentDisplayIsAddAttachments?: boolean;
+        AttachmentDisplayIsCollapsible?: boolean;
+        AlarmDisplayAlarmDisplayName?: string;
+        AlarmDisplayBackgroundColor?: string;
+        AlarmDisplayBorderStyle?: number;
+        AlarmDisplayIsCheckbox?: boolean;
+        AlarmDisplayFont?: string;
+        AlarmDisplayFontColorSelected?: string;
+        AlarmDisplayFontColorUnselected?: string;
+        AlarmDisplayCautionColor?: string;
+        AlarmDisplayWarningColor?: string;
+        AlarmDisplayEmergencyColor?: string;
+        AlarmDisplayActivation?: number;
+        AlarmDisplayAppearance?: number;
+        AlarmDisplayIsOpenInNewWindow?: boolean;
+        AlarmDisplayIsTooltip?: boolean;
+        AlarmDisplayIsHorizontalScrollBar?: boolean;
+        AlarmDisplayIsVerticalScrollBar?: boolean;
+        AlarmDisplayAlignment?: number;
+        AlarmDisplayIsFolderBrowse?: boolean;
+        AlarmDisplayIsAddAttachments?: boolean;
+        AlarmDisplayIsCollapsible?: boolean;
+        NotificationDisplayNotificationDisplayName?: string;
+        NotificationDisplayBackgroundColor?: string;
+        NotificationDisplayBorderStyle?: number;
+        NotificationDisplayFont?: string;
+        NotificationDisplayFontColorSelected?: string;
+        NotificationDisplayFontColorUnselected?: string;
+        NotificationDisplayActivation?: number;
+        NotificationDisplayIsOpenInNewWindow?: boolean;
+        NotificationDisplayIsTooltip?: boolean;
+        NotificationDisplayIsHorizontalScrollBar?: boolean;
+        NotificationDisplayIsVerticalScrollBar?: boolean;
+        NotificationDisplayAlignment?: number;
+        NotificationDisplayIsFolderBrowse?: boolean;
+        NotificationDisplayIsAddAttachments?: boolean;
+        NotificationDisplayIsCollapsible?: boolean;
+        ContainerDisplayContainerDisplayName?: string;
+        ContainerDisplayBackgroundColor?: string;
+        ContainerDisplayBorderStyle?: number;
+        ContainerDisplayFont?: string;
+        ContainerDisplayFontColorSelected?: string;
+        ContainerDisplayFontColorUnselected?: string;
+        ContainerDisplayActivation?: number;
+        ContainerDisplayIsOpenInNewWindow?: boolean;
+        ContainerDisplayIsTooltip?: boolean;
+        ContainerDisplayIsHorizontalScrollBar?: boolean;
+        ContainerDisplayIsVerticalScrollBar?: boolean;
+        ContainerDisplayAlignment?: number;
+        ContainerDisplayIsCollapsible?: boolean;
+    }
+
+    export namespace ViewsRow {
+        export const idProperty = 'ViewsId';
+        export const nameProperty = 'ViewName';
+        export const localTextPrefix = 'ModuleManagement.Views';
+        export const deletePermission = 'Administration:General';
+        export const insertPermission = 'Administration:General';
+        export const readPermission = 'Administration:General';
+        export const updatePermission = 'Administration:General';
+
+        export namespace Fields {
+            export declare const ViewsId;
+            export declare const ModuleId;
+            export declare const ViewName;
+            export declare const IsAccessFieldWise;
+            export declare const StatusId;
+            export declare const CreatedBy;
+            export declare const CreatedDate;
+            export declare const UpdatedBy;
+            export declare const UpdatedDate;
+            export declare const IsMachineSettings;
+            export declare const IsMachineSummary;
+            export declare const IslabelRoll;
+            export declare const IsCommandPanel;
+            export declare const IsFactorySetting;
+            export declare const DisplayObjectTypeId;
+            export declare const MachineId;
+            export declare const ListDisplayId;
+            export declare const FormDisplayId;
+            export declare const ButtonDisplayId;
+            export declare const RealtimeParameterDisplayId;
+            export declare const LineChartDisplayId;
+            export declare const PieChartDisplayId;
+            export declare const TreeDisplayId;
+            export declare const AttachmentDisplayId;
+            export declare const AlarmDisplayId;
+            export declare const NotificationDisplayId;
+            export declare const ContainerDisplayId;
+            export declare const ViewsModuleId;
+            export declare const ViewsViewName;
+            export declare const ViewsIsAccessFieldWise;
+            export declare const ViewsStatusId;
+            export declare const ViewsCreatedBy;
+            export declare const ViewsCreatedDate;
+            export declare const ViewsUpdatedBy;
+            export declare const ViewsUpdatedDate;
+            export declare const ViewsIsMachineSettings;
+            export declare const ViewsIsMachineSummary;
+            export declare const ViewsIslabelRoll;
+            export declare const ViewsIsCommandPanel;
+            export declare const ViewsIsFactorySetting;
+            export declare const ViewsDisplayObjectTypeId;
+            export declare const ViewsMachineId;
+            export declare const ViewsListDisplayId;
+            export declare const ViewsFormDisplayId;
+            export declare const ViewsButtonDisplayId;
+            export declare const ViewsRealtimeParameterDisplayId;
+            export declare const ViewsLineChartDisplayId;
+            export declare const ViewsPieChartDisplayId;
+            export declare const ViewsTreeDisplayId;
+            export declare const ViewsAttachmentDisplayId;
+            export declare const ViewsAlarmDisplayId;
+            export declare const ViewsNotificationDisplayId;
+            export declare const ViewsContainerDisplayId;
+            export declare const ModuleModuleName;
+            export declare const ModuleMachineId;
+            export declare const ModuleStatusId;
+            export declare const ModuleCreatedBy;
+            export declare const ModuleCreatedDate;
+            export declare const ModuleUpdatedBy;
+            export declare const ModuleUpdatedDate;
+            export declare const ModuleSequence;
+            export declare const ModuleEquipmentId;
+            export declare const ModuleSerialNumber;
+            export declare const StatusStatusName;
+            export declare const CreatedByEmployeeId;
+            export declare const CreatedByFirstName;
+            export declare const CreatedByLastName;
+            export declare const CreatedByDepartmentId;
+            export declare const CreatedByDesignation;
+            export declare const CreatedByMobileCode;
+            export declare const CreatedByMobileNumber;
+            export declare const CreatedByEmail;
+            export declare const CreatedByUsername;
+            export declare const CreatedByPasswordHash;
+            export declare const CreatedByPasswordSalt;
+            export declare const CreatedByUserImage;
+            export declare const CreatedByAddress;
+            export declare const CreatedByCityId;
+            export declare const CreatedByPinCode;
+            export declare const CreatedByRoleId;
+            export declare const CreatedByPasswordExpiryDate;
+            export declare const CreatedByIsForgotPassword;
+            export declare const CreatedByIsPasswordChangeOnLogin;
+            export declare const CreatedByIsUserHidden;
+            export declare const CreatedByBirthDate;
+            export declare const CreatedByStatusId;
+            export declare const CreatedBy1;
+            export declare const CreatedByCreatedDate;
+            export declare const CreatedByUpdatedBy;
+            export declare const CreatedByUpdatedDate;
+            export declare const CreatedByQuestionId;
+            export declare const CreatedByQuestionAns;
+            export declare const CreatedByIsLockOut;
+            export declare const CreatedByLockOutDateTime;
+            export declare const CreatedByLogInAttempt;
+            export declare const CreatedByIsActiveDirectory;
+            export declare const CreatedByMachineId;
+            export declare const CreatedByRecordAddedSource;
+            export declare const UpdatedByEmployeeId;
+            export declare const UpdatedByFirstName;
+            export declare const UpdatedByLastName;
+            export declare const UpdatedByDepartmentId;
+            export declare const UpdatedByDesignation;
+            export declare const UpdatedByMobileCode;
+            export declare const UpdatedByMobileNumber;
+            export declare const UpdatedByEmail;
+            export declare const UpdatedByUsername;
+            export declare const UpdatedByPasswordHash;
+            export declare const UpdatedByPasswordSalt;
+            export declare const UpdatedByUserImage;
+            export declare const UpdatedByAddress;
+            export declare const UpdatedByCityId;
+            export declare const UpdatedByPinCode;
+            export declare const UpdatedByRoleId;
+            export declare const UpdatedByPasswordExpiryDate;
+            export declare const UpdatedByIsForgotPassword;
+            export declare const UpdatedByIsPasswordChangeOnLogin;
+            export declare const UpdatedByIsUserHidden;
+            export declare const UpdatedByBirthDate;
+            export declare const UpdatedByStatusId;
+            export declare const UpdatedByCreatedBy;
+            export declare const UpdatedByCreatedDate;
+            export declare const UpdatedBy1;
+            export declare const UpdatedByUpdatedDate;
+            export declare const UpdatedByQuestionId;
+            export declare const UpdatedByQuestionAns;
+            export declare const UpdatedByIsLockOut;
+            export declare const UpdatedByLockOutDateTime;
+            export declare const UpdatedByLogInAttempt;
+            export declare const UpdatedByIsActiveDirectory;
+            export declare const UpdatedByMachineId;
+            export declare const UpdatedByRecordAddedSource;
+            export declare const MachineMachineLineId;
+            export declare const MachineMachineName;
+            export declare const MachineModelNumber;
+            export declare const MachineSerialNumber;
+            export declare const MachineMake;
+            export declare const MachineYear;
+            export declare const MachinePlcMake;
+            export declare const MachinePlcModelNumber;
+            export declare const MachinePlcSerialNumber;
+            export declare const MachinePlcAddress;
+            export declare const MachineAccessIpAddress;
+            export declare const MachineMachineSequence;
+            export declare const MachineMachineImage;
+            export declare const MachineMachineTypeId;
+            export declare const MachineStatusId;
+            export declare const MachineDescription;
+            export declare const MachineCreatedBy;
+            export declare const MachineCreatedDate;
+            export declare const MachineUpdatedBy;
+            export declare const MachineUpdatedDate;
+            export declare const MachineEquipmentId;
+            export declare const MachineTimerForAlarm;
+            export declare const MachineIsactive;
+            export declare const MachineIsShowStatistics;
+            export declare const MachineRecordAddedSource;
+            export declare const MachineIsRealTime;
+            export declare const MachineTableId;
+            export declare const MachineTableName;
+            export declare const ListDisplayBackgroundColor;
+            export declare const ListDisplayBorderStyle;
+            export declare const ListDisplayCheckbox;
+            export declare const ListDisplayFont;
+            export declare const ListDisplayFontColor;
+            export declare const ListDisplayFontSize;
+            export declare const ListDisplayFullRowSelect;
+            export declare const ListDisplayGridlines;
+            export declare const ListDisplayUseWaitCursorOnClick;
+            export declare const ListDisplayActivation;
+            export declare const ListDisplayAlignment;
+            export declare const ListDisplaySortingType;
+            export declare const ListDisplaySortAscDesc;
+            export declare const ListDisplayMultiSelect;
+            export declare const ListDisplayAutoResize;
+            export declare const ListDisplayCollapsible;
+            export declare const ListDisplayViewId;
+            export declare const ListDisplayListDisplayName;
+            export declare const FormDisplayFormDisplayName;
+            export declare const FormDisplayBackgroundColor;
+            export declare const FormDisplayBorderStyle;
+            export declare const FormDisplayIsCheckbox;
+            export declare const FormDisplayFont;
+            export declare const FormDisplayFontColorSelected;
+            export declare const FormDisplayFontColorUnselected;
+            export declare const FormDisplayActivation;
+            export declare const FormDisplayAlignment;
+            export declare const FormDisplayIsTooltip;
+            export declare const FormDisplayIsHorizontalScrollBar;
+            export declare const FormDisplayIsVerticalScrollBar;
+            export declare const FormDisplayIsCollapsible;
+            export declare const ButtonDisplayButtonDisplayName;
+            export declare const ButtonDisplayBackgroundColor;
+            export declare const ButtonDisplayBorderStyle;
+            export declare const ButtonDisplayFont;
+            export declare const ButtonDisplayFontColorSelected;
+            export declare const ButtonDisplayFontColorUnselected;
+            export declare const ButtonDisplayActivation;
+            export declare const ButtonDisplayAlignment;
+            export declare const ButtonDisplayIsTooltip;
+            export declare const ButtonDisplayIsHorizontalScrollBar;
+            export declare const ButtonDisplayIsVerticalScrollBar;
+            export declare const ButtonDisplayIsCollapsible;
+            export declare const RealtimeParameterDisplayRealtimeParameterDisplayName;
+            export declare const RealtimeParameterDisplayBackgroundColor;
+            export declare const RealtimeParameterDisplayBorderStyle;
+            export declare const RealtimeParameterDisplayFont;
+            export declare const RealtimeParameterDisplayFontColor;
+            export declare const RealtimeParameterDisplayAlignment;
+            export declare const RealtimeParameterDisplayIsTooltip;
+            export declare const RealtimeParameterDisplayIsHorizontalScrollBar;
+            export declare const RealtimeParameterDisplayIsVerticalScrollBar;
+            export declare const RealtimeParameterDisplayIsCollapsible;
+            export declare const LineChartDisplayLineChartDisplayName;
+            export declare const LineChartDisplayBackgroundColor;
+            export declare const LineChartDisplayBorderStyle;
+            export declare const LineChartDisplayFont;
+            export declare const LineChartDisplayFontColor;
+            export declare const LineChartDisplayAlignment;
+            export declare const LineChartDisplayIsTooltip;
+            export declare const LineChartDisplayIsHorizontalScrollBar;
+            export declare const LineChartDisplayIsVerticalScrollBar;
+            export declare const LineChartDisplayIsCollapsible;
+            export declare const LineChartDisplayIsLegends;
+            export declare const LineChartDisplayIsGridlines;
+            export declare const LineChartDisplayGridlineColor;
+            export declare const LineChartDisplayIsRealtime;
+            export declare const LineChartDisplayAxisColor;
+            export declare const PieChartDisplayPieChartDisplayName;
+            export declare const PieChartDisplayBackgroundColor;
+            export declare const PieChartDisplayBorderStyle;
+            export declare const PieChartDisplayFont;
+            export declare const PieChartDisplayFontColor;
+            export declare const PieChartDisplayIsLegends;
+            export declare const PieChartDisplayLegendFontSize;
+            export declare const PieChartDisplayIsShowValuesAsPercentage;
+            export declare const PieChartDisplayIsShowTotal;
+            export declare const PieChartDisplayAlignment;
+            export declare const PieChartDisplayIsTooltip;
+            export declare const PieChartDisplayIsHorizontalScrollBar;
+            export declare const PieChartDisplayIsVerticalScrollBar;
+            export declare const PieChartDisplayIsRealtime;
+            export declare const TreeDisplayTreeDisplayName;
+            export declare const TreeDisplayBackgroundColor;
+            export declare const TreeDisplayBorderStyle;
+            export declare const TreeDisplayFont;
+            export declare const TreeDisplayFontColor;
+            export declare const TreeDisplayIsFullRowSelect;
+            export declare const TreeDisplayLineColor;
+            export declare const TreeDisplayDefaultView;
+            export declare const TreeDisplayAlignment;
+            export declare const TreeDisplayIsTooltip;
+            export declare const TreeDisplayIsHorizontalScrollBar;
+            export declare const TreeDisplayIsVerticalScrollBar;
+            export declare const TreeDisplayIsRealtime;
+            export declare const AttachmentDisplayAttachmentDisplayName;
+            export declare const AttachmentDisplayBackgroundColor;
+            export declare const AttachmentDisplayBorderStyle;
+            export declare const AttachmentDisplayIsCheckbox;
+            export declare const AttachmentDisplayFont;
+            export declare const AttachmentDisplayFontColorSelected;
+            export declare const AttachmentDisplayFontColorUnselected;
+            export declare const AttachmentDisplayActivation;
+            export declare const AttachmentDisplayIsOpenInNewWindow;
+            export declare const AttachmentDisplayIsTooltip;
+            export declare const AttachmentDisplayIsHorizontalScrollBar;
+            export declare const AttachmentDisplayIsVerticalScrollBar;
+            export declare const AttachmentDisplayAlignment;
+            export declare const AttachmentDisplayIsFolderBrowse;
+            export declare const AttachmentDisplayIsAddAttachments;
+            export declare const AttachmentDisplayIsCollapsible;
+            export declare const AlarmDisplayAlarmDisplayName;
+            export declare const AlarmDisplayBackgroundColor;
+            export declare const AlarmDisplayBorderStyle;
+            export declare const AlarmDisplayIsCheckbox;
+            export declare const AlarmDisplayFont;
+            export declare const AlarmDisplayFontColorSelected;
+            export declare const AlarmDisplayFontColorUnselected;
+            export declare const AlarmDisplayCautionColor;
+            export declare const AlarmDisplayWarningColor;
+            export declare const AlarmDisplayEmergencyColor;
+            export declare const AlarmDisplayActivation;
+            export declare const AlarmDisplayAppearance;
+            export declare const AlarmDisplayIsOpenInNewWindow;
+            export declare const AlarmDisplayIsTooltip;
+            export declare const AlarmDisplayIsHorizontalScrollBar;
+            export declare const AlarmDisplayIsVerticalScrollBar;
+            export declare const AlarmDisplayAlignment;
+            export declare const AlarmDisplayIsFolderBrowse;
+            export declare const AlarmDisplayIsAddAttachments;
+            export declare const AlarmDisplayIsCollapsible;
+            export declare const NotificationDisplayNotificationDisplayName;
+            export declare const NotificationDisplayBackgroundColor;
+            export declare const NotificationDisplayBorderStyle;
+            export declare const NotificationDisplayFont;
+            export declare const NotificationDisplayFontColorSelected;
+            export declare const NotificationDisplayFontColorUnselected;
+            export declare const NotificationDisplayActivation;
+            export declare const NotificationDisplayIsOpenInNewWindow;
+            export declare const NotificationDisplayIsTooltip;
+            export declare const NotificationDisplayIsHorizontalScrollBar;
+            export declare const NotificationDisplayIsVerticalScrollBar;
+            export declare const NotificationDisplayAlignment;
+            export declare const NotificationDisplayIsFolderBrowse;
+            export declare const NotificationDisplayIsAddAttachments;
+            export declare const NotificationDisplayIsCollapsible;
+            export declare const ContainerDisplayContainerDisplayName;
+            export declare const ContainerDisplayBackgroundColor;
+            export declare const ContainerDisplayBorderStyle;
+            export declare const ContainerDisplayFont;
+            export declare const ContainerDisplayFontColorSelected;
+            export declare const ContainerDisplayFontColorUnselected;
+            export declare const ContainerDisplayActivation;
+            export declare const ContainerDisplayIsOpenInNewWindow;
+            export declare const ContainerDisplayIsTooltip;
+            export declare const ContainerDisplayIsHorizontalScrollBar;
+            export declare const ContainerDisplayIsVerticalScrollBar;
+            export declare const ContainerDisplayAlignment;
+            export declare const ContainerDisplayIsCollapsible;
+        }
+
+        [
+            'ViewsId',
+            'ModuleId',
+            'ViewName',
+            'IsAccessFieldWise',
+            'StatusId',
+            'CreatedBy',
+            'CreatedDate',
+            'UpdatedBy',
+            'UpdatedDate',
+            'IsMachineSettings',
+            'IsMachineSummary',
+            'IslabelRoll',
+            'IsCommandPanel',
+            'IsFactorySetting',
+            'DisplayObjectTypeId',
+            'MachineId',
+            'ListDisplayId',
+            'FormDisplayId',
+            'ButtonDisplayId',
+            'RealtimeParameterDisplayId',
+            'LineChartDisplayId',
+            'PieChartDisplayId',
+            'TreeDisplayId',
+            'AttachmentDisplayId',
+            'AlarmDisplayId',
+            'NotificationDisplayId',
+            'ContainerDisplayId',
+            'ViewsModuleId',
+            'ViewsViewName',
+            'ViewsIsAccessFieldWise',
+            'ViewsStatusId',
+            'ViewsCreatedBy',
+            'ViewsCreatedDate',
+            'ViewsUpdatedBy',
+            'ViewsUpdatedDate',
+            'ViewsIsMachineSettings',
+            'ViewsIsMachineSummary',
+            'ViewsIslabelRoll',
+            'ViewsIsCommandPanel',
+            'ViewsIsFactorySetting',
+            'ViewsDisplayObjectTypeId',
+            'ViewsMachineId',
+            'ViewsListDisplayId',
+            'ViewsFormDisplayId',
+            'ViewsButtonDisplayId',
+            'ViewsRealtimeParameterDisplayId',
+            'ViewsLineChartDisplayId',
+            'ViewsPieChartDisplayId',
+            'ViewsTreeDisplayId',
+            'ViewsAttachmentDisplayId',
+            'ViewsAlarmDisplayId',
+            'ViewsNotificationDisplayId',
+            'ViewsContainerDisplayId',
+            'ModuleModuleName',
+            'ModuleMachineId',
+            'ModuleStatusId',
+            'ModuleCreatedBy',
+            'ModuleCreatedDate',
+            'ModuleUpdatedBy',
+            'ModuleUpdatedDate',
+            'ModuleSequence',
+            'ModuleEquipmentId',
+            'ModuleSerialNumber',
+            'StatusStatusName',
+            'CreatedByEmployeeId',
+            'CreatedByFirstName',
+            'CreatedByLastName',
+            'CreatedByDepartmentId',
+            'CreatedByDesignation',
+            'CreatedByMobileCode',
+            'CreatedByMobileNumber',
+            'CreatedByEmail',
+            'CreatedByUsername',
+            'CreatedByPasswordHash',
+            'CreatedByPasswordSalt',
+            'CreatedByUserImage',
+            'CreatedByAddress',
+            'CreatedByCityId',
+            'CreatedByPinCode',
+            'CreatedByRoleId',
+            'CreatedByPasswordExpiryDate',
+            'CreatedByIsForgotPassword',
+            'CreatedByIsPasswordChangeOnLogin',
+            'CreatedByIsUserHidden',
+            'CreatedByBirthDate',
+            'CreatedByStatusId',
+            'CreatedBy1',
+            'CreatedByCreatedDate',
+            'CreatedByUpdatedBy',
+            'CreatedByUpdatedDate',
+            'CreatedByQuestionId',
+            'CreatedByQuestionAns',
+            'CreatedByIsLockOut',
+            'CreatedByLockOutDateTime',
+            'CreatedByLogInAttempt',
+            'CreatedByIsActiveDirectory',
+            'CreatedByMachineId',
+            'CreatedByRecordAddedSource',
+            'UpdatedByEmployeeId',
+            'UpdatedByFirstName',
+            'UpdatedByLastName',
+            'UpdatedByDepartmentId',
+            'UpdatedByDesignation',
+            'UpdatedByMobileCode',
+            'UpdatedByMobileNumber',
+            'UpdatedByEmail',
+            'UpdatedByUsername',
+            'UpdatedByPasswordHash',
+            'UpdatedByPasswordSalt',
+            'UpdatedByUserImage',
+            'UpdatedByAddress',
+            'UpdatedByCityId',
+            'UpdatedByPinCode',
+            'UpdatedByRoleId',
+            'UpdatedByPasswordExpiryDate',
+            'UpdatedByIsForgotPassword',
+            'UpdatedByIsPasswordChangeOnLogin',
+            'UpdatedByIsUserHidden',
+            'UpdatedByBirthDate',
+            'UpdatedByStatusId',
+            'UpdatedByCreatedBy',
+            'UpdatedByCreatedDate',
+            'UpdatedBy1',
+            'UpdatedByUpdatedDate',
+            'UpdatedByQuestionId',
+            'UpdatedByQuestionAns',
+            'UpdatedByIsLockOut',
+            'UpdatedByLockOutDateTime',
+            'UpdatedByLogInAttempt',
+            'UpdatedByIsActiveDirectory',
+            'UpdatedByMachineId',
+            'UpdatedByRecordAddedSource',
+            'MachineMachineLineId',
+            'MachineMachineName',
+            'MachineModelNumber',
+            'MachineSerialNumber',
+            'MachineMake',
+            'MachineYear',
+            'MachinePlcMake',
+            'MachinePlcModelNumber',
+            'MachinePlcSerialNumber',
+            'MachinePlcAddress',
+            'MachineAccessIpAddress',
+            'MachineMachineSequence',
+            'MachineMachineImage',
+            'MachineMachineTypeId',
+            'MachineStatusId',
+            'MachineDescription',
+            'MachineCreatedBy',
+            'MachineCreatedDate',
+            'MachineUpdatedBy',
+            'MachineUpdatedDate',
+            'MachineEquipmentId',
+            'MachineTimerForAlarm',
+            'MachineIsactive',
+            'MachineIsShowStatistics',
+            'MachineRecordAddedSource',
+            'MachineIsRealTime',
+            'MachineTableId',
+            'MachineTableName',
+            'ListDisplayBackgroundColor',
+            'ListDisplayBorderStyle',
+            'ListDisplayCheckbox',
+            'ListDisplayFont',
+            'ListDisplayFontColor',
+            'ListDisplayFontSize',
+            'ListDisplayFullRowSelect',
+            'ListDisplayGridlines',
+            'ListDisplayUseWaitCursorOnClick',
+            'ListDisplayActivation',
+            'ListDisplayAlignment',
+            'ListDisplaySortingType',
+            'ListDisplaySortAscDesc',
+            'ListDisplayMultiSelect',
+            'ListDisplayAutoResize',
+            'ListDisplayCollapsible',
+            'ListDisplayViewId',
+            'ListDisplayListDisplayName',
+            'FormDisplayFormDisplayName',
+            'FormDisplayBackgroundColor',
+            'FormDisplayBorderStyle',
+            'FormDisplayIsCheckbox',
+            'FormDisplayFont',
+            'FormDisplayFontColorSelected',
+            'FormDisplayFontColorUnselected',
+            'FormDisplayActivation',
+            'FormDisplayAlignment',
+            'FormDisplayIsTooltip',
+            'FormDisplayIsHorizontalScrollBar',
+            'FormDisplayIsVerticalScrollBar',
+            'FormDisplayIsCollapsible',
+            'ButtonDisplayButtonDisplayName',
+            'ButtonDisplayBackgroundColor',
+            'ButtonDisplayBorderStyle',
+            'ButtonDisplayFont',
+            'ButtonDisplayFontColorSelected',
+            'ButtonDisplayFontColorUnselected',
+            'ButtonDisplayActivation',
+            'ButtonDisplayAlignment',
+            'ButtonDisplayIsTooltip',
+            'ButtonDisplayIsHorizontalScrollBar',
+            'ButtonDisplayIsVerticalScrollBar',
+            'ButtonDisplayIsCollapsible',
+            'RealtimeParameterDisplayRealtimeParameterDisplayName',
+            'RealtimeParameterDisplayBackgroundColor',
+            'RealtimeParameterDisplayBorderStyle',
+            'RealtimeParameterDisplayFont',
+            'RealtimeParameterDisplayFontColor',
+            'RealtimeParameterDisplayAlignment',
+            'RealtimeParameterDisplayIsTooltip',
+            'RealtimeParameterDisplayIsHorizontalScrollBar',
+            'RealtimeParameterDisplayIsVerticalScrollBar',
+            'RealtimeParameterDisplayIsCollapsible',
+            'LineChartDisplayLineChartDisplayName',
+            'LineChartDisplayBackgroundColor',
+            'LineChartDisplayBorderStyle',
+            'LineChartDisplayFont',
+            'LineChartDisplayFontColor',
+            'LineChartDisplayAlignment',
+            'LineChartDisplayIsTooltip',
+            'LineChartDisplayIsHorizontalScrollBar',
+            'LineChartDisplayIsVerticalScrollBar',
+            'LineChartDisplayIsCollapsible',
+            'LineChartDisplayIsLegends',
+            'LineChartDisplayIsGridlines',
+            'LineChartDisplayGridlineColor',
+            'LineChartDisplayIsRealtime',
+            'LineChartDisplayAxisColor',
+            'PieChartDisplayPieChartDisplayName',
+            'PieChartDisplayBackgroundColor',
+            'PieChartDisplayBorderStyle',
+            'PieChartDisplayFont',
+            'PieChartDisplayFontColor',
+            'PieChartDisplayIsLegends',
+            'PieChartDisplayLegendFontSize',
+            'PieChartDisplayIsShowValuesAsPercentage',
+            'PieChartDisplayIsShowTotal',
+            'PieChartDisplayAlignment',
+            'PieChartDisplayIsTooltip',
+            'PieChartDisplayIsHorizontalScrollBar',
+            'PieChartDisplayIsVerticalScrollBar',
+            'PieChartDisplayIsRealtime',
+            'TreeDisplayTreeDisplayName',
+            'TreeDisplayBackgroundColor',
+            'TreeDisplayBorderStyle',
+            'TreeDisplayFont',
+            'TreeDisplayFontColor',
+            'TreeDisplayIsFullRowSelect',
+            'TreeDisplayLineColor',
+            'TreeDisplayDefaultView',
+            'TreeDisplayAlignment',
+            'TreeDisplayIsTooltip',
+            'TreeDisplayIsHorizontalScrollBar',
+            'TreeDisplayIsVerticalScrollBar',
+            'TreeDisplayIsRealtime',
+            'AttachmentDisplayAttachmentDisplayName',
+            'AttachmentDisplayBackgroundColor',
+            'AttachmentDisplayBorderStyle',
+            'AttachmentDisplayIsCheckbox',
+            'AttachmentDisplayFont',
+            'AttachmentDisplayFontColorSelected',
+            'AttachmentDisplayFontColorUnselected',
+            'AttachmentDisplayActivation',
+            'AttachmentDisplayIsOpenInNewWindow',
+            'AttachmentDisplayIsTooltip',
+            'AttachmentDisplayIsHorizontalScrollBar',
+            'AttachmentDisplayIsVerticalScrollBar',
+            'AttachmentDisplayAlignment',
+            'AttachmentDisplayIsFolderBrowse',
+            'AttachmentDisplayIsAddAttachments',
+            'AttachmentDisplayIsCollapsible',
+            'AlarmDisplayAlarmDisplayName',
+            'AlarmDisplayBackgroundColor',
+            'AlarmDisplayBorderStyle',
+            'AlarmDisplayIsCheckbox',
+            'AlarmDisplayFont',
+            'AlarmDisplayFontColorSelected',
+            'AlarmDisplayFontColorUnselected',
+            'AlarmDisplayCautionColor',
+            'AlarmDisplayWarningColor',
+            'AlarmDisplayEmergencyColor',
+            'AlarmDisplayActivation',
+            'AlarmDisplayAppearance',
+            'AlarmDisplayIsOpenInNewWindow',
+            'AlarmDisplayIsTooltip',
+            'AlarmDisplayIsHorizontalScrollBar',
+            'AlarmDisplayIsVerticalScrollBar',
+            'AlarmDisplayAlignment',
+            'AlarmDisplayIsFolderBrowse',
+            'AlarmDisplayIsAddAttachments',
+            'AlarmDisplayIsCollapsible',
+            'NotificationDisplayNotificationDisplayName',
+            'NotificationDisplayBackgroundColor',
+            'NotificationDisplayBorderStyle',
+            'NotificationDisplayFont',
+            'NotificationDisplayFontColorSelected',
+            'NotificationDisplayFontColorUnselected',
+            'NotificationDisplayActivation',
+            'NotificationDisplayIsOpenInNewWindow',
+            'NotificationDisplayIsTooltip',
+            'NotificationDisplayIsHorizontalScrollBar',
+            'NotificationDisplayIsVerticalScrollBar',
+            'NotificationDisplayAlignment',
+            'NotificationDisplayIsFolderBrowse',
+            'NotificationDisplayIsAddAttachments',
+            'NotificationDisplayIsCollapsible',
+            'ContainerDisplayContainerDisplayName',
+            'ContainerDisplayBackgroundColor',
+            'ContainerDisplayBorderStyle',
+            'ContainerDisplayFont',
+            'ContainerDisplayFontColorSelected',
+            'ContainerDisplayFontColorUnselected',
+            'ContainerDisplayActivation',
+            'ContainerDisplayIsOpenInNewWindow',
+            'ContainerDisplayIsTooltip',
+            'ContainerDisplayIsHorizontalScrollBar',
+            'ContainerDisplayIsVerticalScrollBar',
+            'ContainerDisplayAlignment',
+            'ContainerDisplayIsCollapsible'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}

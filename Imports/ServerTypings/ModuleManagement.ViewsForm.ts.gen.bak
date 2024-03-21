@@ -1,0 +1,70 @@
+﻿
+namespace CVC.ModuleManagement {
+    export class ViewsForm extends Serenity.PrefixedContext {
+        static formKey = 'ModuleManagement.Views';
+    }
+
+    export interface ViewsForm {
+        ModuleId: Serenity.IntegerEditor;
+        ViewName: Serenity.StringEditor;
+        IsAccessFieldWise: Serenity.BooleanEditor;
+        StatusId: Serenity.IntegerEditor;
+        CreatedBy: Serenity.IntegerEditor;
+        CreatedDate: Serenity.DateEditor;
+        UpdatedBy: Serenity.IntegerEditor;
+        UpdatedDate: Serenity.DateEditor;
+        IsMachineSettings: Serenity.BooleanEditor;
+        IsMachineSummary: Serenity.BooleanEditor;
+        IslabelRoll: Serenity.BooleanEditor;
+        IsCommandPanel: Serenity.BooleanEditor;
+        IsFactorySetting: Serenity.BooleanEditor;
+        DisplayObjectTypeId: Serenity.IntegerEditor;
+        MachineId: Serenity.IntegerEditor;
+        ListDisplayId: Serenity.IntegerEditor;
+        FormDisplayId: Serenity.IntegerEditor;
+        ButtonDisplayId: Serenity.IntegerEditor;
+        RealtimeParameterDisplayId: Serenity.IntegerEditor;
+        LineChartDisplayId: Serenity.IntegerEditor;
+        PieChartDisplayId: Serenity.IntegerEditor;
+        TreeDisplayId: Serenity.IntegerEditor;
+        AttachmentDisplayId: Serenity.IntegerEditor;
+        AlarmDisplayId: Serenity.IntegerEditor;
+        NotificationDisplayId: Serenity.IntegerEditor;
+        ContainerDisplayId: Serenity.IntegerEditor;
+    }
+
+    [,
+        ['ModuleId', () => Serenity.IntegerEditor],
+        ['ViewName', () => Serenity.StringEditor],
+        ['IsAccessFieldWise', () => Serenity.BooleanEditor],
+        ['StatusId', () => Serenity.IntegerEditor],
+        ['CreatedBy', () => Serenity.IntegerEditor],
+        ['CreatedDate', () => Serenity.DateEditor],
+        ['UpdatedBy', () => Serenity.IntegerEditor],
+        ['UpdatedDate', () => Serenity.DateEditor],
+        ['IsMachineSettings', () => Serenity.BooleanEditor],
+        ['IsMachineSummary', () => Serenity.BooleanEditor],
+        ['IslabelRoll', () => Serenity.BooleanEditor],
+        ['IsCommandPanel', () => Serenity.BooleanEditor],
+        ['IsFactorySetting', () => Serenity.BooleanEditor],
+        ['DisplayObjectTypeId', () => Serenity.IntegerEditor],
+        ['MachineId', () => Serenity.IntegerEditor],
+        ['ListDisplayId', () => Serenity.IntegerEditor],
+        ['FormDisplayId', () => Serenity.IntegerEditor],
+        ['ButtonDisplayId', () => Serenity.IntegerEditor],
+        ['RealtimeParameterDisplayId', () => Serenity.IntegerEditor],
+        ['LineChartDisplayId', () => Serenity.IntegerEditor],
+        ['PieChartDisplayId', () => Serenity.IntegerEditor],
+        ['TreeDisplayId', () => Serenity.IntegerEditor],
+        ['AttachmentDisplayId', () => Serenity.IntegerEditor],
+        ['AlarmDisplayId', () => Serenity.IntegerEditor],
+        ['NotificationDisplayId', () => Serenity.IntegerEditor],
+        ['ContainerDisplayId', () => Serenity.IntegerEditor]
+    ].forEach(x => Object.defineProperty(ViewsForm.prototype, <string>x[0], {
+        get: function () {
+            return this.w(x[0], (x[1] as any)());
+        },
+        enumerable: true,
+        configurable: true
+    }));
+}

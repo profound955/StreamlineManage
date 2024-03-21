@@ -1,0 +1,43 @@
+﻿
+namespace CVC.ModuleManagement.Forms
+{
+    using Serenity;
+    using Serenity.ComponentModel;
+    using Serenity.Data;
+    using System;
+    using System.ComponentModel;
+    using System.Collections.Generic;
+    using System.IO;
+
+    [FormScript("ModuleManagement.Views")]
+    [BasedOnRow(typeof(Entities.ViewsRow), CheckNames = true)]
+    public class ViewsForm
+    {
+        public Int32 ModuleId { get; set; }
+        public String ViewName { get; set; }
+        public Boolean IsAccessFieldWise { get; set; }
+        public Int32 StatusId { get; set; }
+        public Int32 CreatedBy { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public Int32 UpdatedBy { get; set; }
+        public DateTime UpdatedDate { get; set; }
+        public Boolean IsMachineSettings { get; set; }
+        public Boolean IsMachineSummary { get; set; }
+        public Boolean IslabelRoll { get; set; }
+        public Boolean IsCommandPanel { get; set; }
+        public Boolean IsFactorySetting { get; set; }
+        public Int32 DisplayObjectTypeId { get; set; }
+        public Int32 MachineId { get; set; }
+        public Int32 ListDisplayId { get; set; }
+        public Int32 FormDisplayId { get; set; }
+        public Int32 ButtonDisplayId { get; set; }
+        public Int32 RealtimeParameterDisplayId { get; set; }
+        public Int32 LineChartDisplayId { get; set; }
+        public Int32 PieChartDisplayId { get; set; }
+        public Int32 TreeDisplayId { get; set; }
+        public Int32 AttachmentDisplayId { get; set; }
+        public Int32 AlarmDisplayId { get; set; }
+        public Int32 NotificationDisplayId { get; set; }
+        public Int32 ContainerDisplayId { get; set; }
+    }
+}

@@ -1,0 +1,79 @@
+﻿
+namespace CVC.MachineCustomization.Entities
+{
+    using Serenity;
+    using Serenity.ComponentModel;
+    using Serenity.Data;
+    using Serenity.Data.Mapping;
+    using System;
+    using System.ComponentModel;
+    using System.IO;
+
+    [ConnectionKey("Default"), Module("MachineCustomization"), TableName("[dbo].[DisplayObjectColor]")]
+    [DisplayName("Display Object Color"), InstanceName("Display Object Color")]
+    [ReadPermission("Administration:General")]
+    [ModifyPermission("Administration:General")]
+    public sealed class DisplayObjectColorRow : Row, IIdRow, INameRow
+    {
+        [DisplayName("Color Id"), Identity]
+        public Int32? ColorId
+        {
+            get { return Fields.ColorId[this]; }
+            set { Fields.ColorId[this] = value; }
+        }
+
+        [DisplayName("Range From")]
+        public Double? RangeFrom
+        {
+            get { return Fields.RangeFrom[this]; }
+            set { Fields.RangeFrom[this] = value; }
+        }
+
+        [DisplayName("Range To")]
+        public Double? RangeTo
+        {
+            get { return Fields.RangeTo[this]; }
+            set { Fields.RangeTo[this] = value; }
+        }
+
+        [DisplayName("Color"), Size(50), QuickSearch]
+        public String Color
+        {
+            get { return Fields.Color[this]; }
+            set { Fields.Color[this] = value; }
+        }
+
+        [DisplayName("Do Type Id"), Column("DOTypeId"), NotNull]
+        public Int32? DoTypeId
+        {
+            get { return Fields.DoTypeId[this]; }
+            set { Fields.DoTypeId[this] = value; }
+        }
+
+        IIdField IIdRow.IdField
+        {
+            get { return Fields.ColorId; }
+        }
+
+        StringField INameRow.NameField
+        {
+            get { return Fields.Color; }
+        }
+
+        public static readonly RowFields Fields = new RowFields().Init();
+
+        public DisplayObjectColorRow()
+            : base(Fields)
+        {
+        }
+
+        public class RowFields : RowFieldsBase
+        {
+            public Int32Field ColorId;
+            public DoubleField RangeFrom;
+            public DoubleField RangeTo;
+            public StringField Color;
+            public Int32Field DoTypeId;
+        }
+    }
+}

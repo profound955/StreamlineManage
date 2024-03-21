@@ -1,0 +1,46 @@
+﻿
+namespace CVC.ModuleManagement.Columns
+{
+    using Serenity;
+    using Serenity.ComponentModel;
+    using Serenity.Data;
+    using System;
+    using System.ComponentModel;
+    using System.Collections.Generic;
+    using System.IO;
+
+    [ColumnsScript("ModuleManagement.Views")]
+    [BasedOnRow(typeof(Entities.ViewsRow), CheckNames = true)]
+    public class ViewsColumns
+    {
+        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+        public String ViewsViewName { get; set; }
+        public String ModuleModuleName { get; set; }
+        [EditLink]
+        public String ViewName { get; set; }
+        public Boolean IsAccessFieldWise { get; set; }
+        public String StatusStatusName { get; set; }
+        public String CreatedByEmployeeId { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public String UpdatedByEmployeeId { get; set; }
+        public DateTime UpdatedDate { get; set; }
+        public Boolean IsMachineSettings { get; set; }
+        public Boolean IsMachineSummary { get; set; }
+        public Boolean IslabelRoll { get; set; }
+        public Boolean IsCommandPanel { get; set; }
+        public Boolean IsFactorySetting { get; set; }
+        public Int32 DisplayObjectTypeId { get; set; }
+        public String MachineMachineName { get; set; }
+        public String ListDisplayBackgroundColor { get; set; }
+        public String FormDisplayFormDisplayName { get; set; }
+        public String ButtonDisplayButtonDisplayName { get; set; }
+        public String RealtimeParameterDisplayRealtimeParameterDisplayName { get; set; }
+        public String LineChartDisplayLineChartDisplayName { get; set; }
+        public String PieChartDisplayPieChartDisplayName { get; set; }
+        public String TreeDisplayTreeDisplayName { get; set; }
+        public String AttachmentDisplayAttachmentDisplayName { get; set; }
+        public String AlarmDisplayAlarmDisplayName { get; set; }
+        public String NotificationDisplayNotificationDisplayName { get; set; }
+        public String ContainerDisplayContainerDisplayName { get; set; }
+    }
+}

@@ -1,0 +1,52 @@
+﻿
+namespace CVC.MachineCustomization {
+    export class AttachmentDisplayForm extends Serenity.PrefixedContext {
+        static formKey = 'MachineCustomization.AttachmentDisplay';
+    }
+
+    export interface AttachmentDisplayForm {
+        AttachmentDisplayName: Serenity.StringEditor;
+        BackgroundColor: Serenity.StringEditor;
+        BorderStyle: Serenity.IntegerEditor;
+        IsCheckbox: Serenity.BooleanEditor;
+        Font: Serenity.StringEditor;
+        FontColorSelected: Serenity.StringEditor;
+        FontColorUnselected: Serenity.StringEditor;
+        Activation: Serenity.IntegerEditor;
+        IsOpenInNewWindow: Serenity.BooleanEditor;
+        IsTooltip: Serenity.BooleanEditor;
+        IsHorizontalScrollBar: Serenity.BooleanEditor;
+        IsVerticalScrollBar: Serenity.BooleanEditor;
+        Alignment: Serenity.IntegerEditor;
+        IsFolderBrowse: Serenity.BooleanEditor;
+        IsAddAttachments: Serenity.BooleanEditor;
+        IsCollapsible: Serenity.BooleanEditor;
+        AttachmentTypeId: Serenity.IntegerEditor;
+    }
+
+    [,
+        ['AttachmentDisplayName', () => Serenity.StringEditor],
+        ['BackgroundColor', () => Serenity.StringEditor],
+        ['BorderStyle', () => Serenity.IntegerEditor],
+        ['IsCheckbox', () => Serenity.BooleanEditor],
+        ['Font', () => Serenity.StringEditor],
+        ['FontColorSelected', () => Serenity.StringEditor],
+        ['FontColorUnselected', () => Serenity.StringEditor],
+        ['Activation', () => Serenity.IntegerEditor],
+        ['IsOpenInNewWindow', () => Serenity.BooleanEditor],
+        ['IsTooltip', () => Serenity.BooleanEditor],
+        ['IsHorizontalScrollBar', () => Serenity.BooleanEditor],
+        ['IsVerticalScrollBar', () => Serenity.BooleanEditor],
+        ['Alignment', () => Serenity.IntegerEditor],
+        ['IsFolderBrowse', () => Serenity.BooleanEditor],
+        ['IsAddAttachments', () => Serenity.BooleanEditor],
+        ['IsCollapsible', () => Serenity.BooleanEditor],
+        ['AttachmentTypeId', () => Serenity.IntegerEditor]
+    ].forEach(x => Object.defineProperty(AttachmentDisplayForm.prototype, <string>x[0], {
+        get: function () {
+            return this.w(x[0], (x[1] as any)());
+        },
+        enumerable: true,
+        configurable: true
+    }));
+}

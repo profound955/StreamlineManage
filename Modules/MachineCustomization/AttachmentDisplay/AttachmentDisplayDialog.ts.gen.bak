@@ -1,0 +1,18 @@
+﻿
+namespace CVC.MachineCustomization {
+
+    @Serenity.Decorators.registerClass()
+    export class AttachmentDisplayDialog extends Serenity.EntityDialog<AttachmentDisplayRow, any> {
+        protected getFormKey() { return AttachmentDisplayForm.formKey; }
+        protected getIdProperty() { return AttachmentDisplayRow.idProperty; }
+        protected getLocalTextPrefix() { return AttachmentDisplayRow.localTextPrefix; }
+        protected getNameProperty() { return AttachmentDisplayRow.nameProperty; }
+        protected getService() { return AttachmentDisplayService.baseUrl; }
+        protected getDeletePermission() { return AttachmentDisplayRow.deletePermission; }
+        protected getInsertPermission() { return AttachmentDisplayRow.insertPermission; }
+        protected getUpdatePermission() { return AttachmentDisplayRow.updatePermission; }
+
+        protected form = new AttachmentDisplayForm(this.idPrefix);
+
+    }
+}

@@ -1,0 +1,73 @@
+{"time":"2024-01-30T03:02","doName":"AttachmentType","dotype":"Attachments Display","logtype":"main","content":"open the DO edit modal","entity":"Cap entity","visibleColumns":[],"tableName":"Cap"}
+{"time":"2024-01-30T03:02","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapDiameter"}
+{"time":"2024-01-30T03:02","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapDiameter"}
+{"time":"2024-01-30T06:35","doName":"piegrpah123","dotype":"Pie Chart Display","logtype":"main","content":"open the DO edit modal","entity":"PLC-labelling machine","visibleColumns":[],"tableName":""}
+{"time":"2024-01-30T06:35","doName":"piegrpah123","dotype":"Pie Chart Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Actual Bottle Diameter-DLMk"}
+{"time":"2024-01-30T06:35","doName":"piegrpah123","dotype":"Pie Chart Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Missing Label Counter-DLM"}
+{"time":"2024-01-30T06:35","doName":"piegrpah123","dotype":"Pie Chart Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Good Vials Counter-DLM"}
+{"time":"2024-01-30T07:03","doName":"piegrpah123","dotype":"Pie Chart Display","logtype":"main","content":"open the DO edit modal","entity":"PLC-labelling machine","visibleColumns":[],"tableName":""}
+{"time":"2024-01-30T07:04","doName":"piegrpah123","dotype":"Pie Chart Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Good Vials Counter-DLM"}
+{"time":"2024-01-30T07:05","doName":"piegrpah123","dotype":"Pie Chart Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Reject Vial Counter-DLM"}
+{"time":"2024-01-30T07:29","doName":"Linechart","dotype":"Notification Display","logtype":"main","content":"open the DO edit modal","entity":"PLC-labelling machine","visibleColumns":[],"tableName":""}
+{"time":"2024-01-30T07:29","doName":"Linechart","dotype":"Notification Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Actual Bottle Diameter-DLMk"}
+{"time":"2024-01-30T07:29","doName":"Linechart","dotype":"Notification Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Actual gap length-DLM"}
+{"time":"2024-01-30T07:29","doName":"Linechart","dotype":"Notification Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Alarm -reset -DLM"}
+{"time":"2024-01-30T07:29","doName":"Linechart","dotype":"Notification Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"A-Scale Reco7rd8dsf"}
+{"time":"2024-01-30T07:29","doName":"Linechart","dotype":"Notification Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Alarm -reset -DLM"}
+{"time":"2024-01-30T07:31","doName":"Linechart","dotype":"Notification Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Actual Bottle Diameter-DLMk"}
+{"time":"2024-01-30T08:16","doName":"cap display object","dotype":"List Display","logtype":"main","content":"open the DO edit modal","entity":"Cap entity","visibleColumns":[],"tableName":"Cap"}
+{"time":"2024-01-30T08:17","doName":"cap display object","dotype":"List Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapDiameter"}
+{"time":"2024-01-30T08:18","doName":"AttachmentType","dotype":"Attachments Display","logtype":"main","content":"open the DO edit modal","entity":"Cap entity","visibleColumns":[],"tableName":"Cap"}
+{"time":"2024-01-30T08:18","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapDiameter"}
+{"time":"2024-01-30T08:18","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapTypeId"}
+{"time":"2024-01-30T08:18","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapName"}
+{"time":"2024-01-30T08:23","doName":"AttachmentType","dotype":"Attachments Display","logtype":"main","content":"open the DO edit modal","entity":"Cap entity","visibleColumns":[],"tableName":"Cap"}
+{"time":"2024-01-30T08:23","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapDiameter"}
+{"time":"2024-01-30T08:24","doName":"AttachmentType","dotype":"Attachments Display","logtype":"main","content":"open the DO edit modal","entity":"Cap entity","visibleColumns":[],"tableName":"Cap"}
+{"time":"2024-01-30T08:24","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapDiameter"}
+{"time":"2024-01-30T08:30","doName":"AttachmentType","dotype":"Attachments Display","logtype":"main","content":"open the DO edit modal","entity":"Cap entity","visibleColumns":[],"tableName":"Cap"}
+{"time":"2024-01-30T08:30","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapDiameter"}
+{"time":"2024-01-30T08:30","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapTypeId"}
+{"time":"2024-01-30T08:30","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapName"}
+{"time":"2024-01-30T08:30","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapDiameter"}
+{"time":"2024-01-30T08:31","doName":"AttachmentType","dotype":"Attachments Display","logtype":"main","content":"open the DO edit modal","entity":"Cap entity","visibleColumns":[],"tableName":"Cap"}
+{"time":"2024-01-30T08:31","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapDiameter"}
+{"time":"2024-01-30T08:31","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapTypeId"}
+{"time":"2024-01-30T08:31","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapName"}
+{"time":"2024-01-30T08:37","doName":"CommandPnl","dotype":"Button Display","logtype":"main","content":"open the DO edit modal","entity":"PLC-labelling machine","visibleColumns":[],"tableName":""}
+{"time":"2024-01-30T08:37","doName":"CommandPnl","dotype":"Button Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Actual Bottle Diameter-DLMk"}
+{"time":"2024-01-30T08:37","doName":"CommandPnl","dotype":"Button Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Actual gap length-DLM"}
+{"time":"2024-01-30T08:37","doName":"CommandPnl","dotype":"Button Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Actual Gap-DLM"}
+{"time":"2024-01-30T08:37","doName":"CommandPnl","dotype":"Button Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Actual label Length-DLM"}
+{"time":"2024-01-30T08:37","doName":"CommandPnl","dotype":"Button Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Alarm -reset -DLM"}
+{"time":"2024-01-30T08:38","doName":"CommandPnl","dotype":"Button Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"A-Scale Reco7rd8dsf"}
+{"time":"2024-01-30T08:39","doName":"CommandPnl","dotype":"Button Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Backlog Time Alarm - Stop Mode"}
+{"time":"2024-01-30T08:39","doName":"CommandPnl","dotype":"Button Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Backlog Time Alarm-DLM"}
+{"time":"2024-01-30T08:39","doName":"CommandPnl","dotype":"Button Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Backlog Time-DLM"}
+{"time":"2024-01-30T08:39","doName":"CommandPnl","dotype":"Button Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Batch Over - Stop Mode"}
+{"time":"2024-01-30T08:39","doName":"CommandPnl","dotype":"Button Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Batch Over Alarm-DLM"}
+{"time":"2024-01-30T08:39","doName":"CommandPnl","dotype":"Button Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Bottle Tolerance-DLM"}
+{"time":"2024-01-30T08:40","doName":"Real Panel Summary","dotype":"Realtime Parameter Display","logtype":"main","content":"open the DO edit modal","entity":"PLC-labelling machine","visibleColumns":[],"tableName":""}
+{"time":"2024-01-30T08:40","doName":"Real Panel Summary","dotype":"Realtime Parameter Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Actual Bottle Diameter-DLMk"}
+{"time":"2024-01-30T08:40","doName":"Real Panel Summary","dotype":"Realtime Parameter Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Alarm -reset -DLM"}
+{"time":"2024-01-30T08:40","doName":"Real Panel Summary","dotype":"Realtime Parameter Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"A-Scale Reco7rd8dsf"}
+{"time":"2024-01-30T08:40","doName":"Real Panel Summary","dotype":"Realtime Parameter Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Auto Seperator On/Off"}
+{"time":"2024-01-30T08:40","doName":"Real Panel Summary","dotype":"Realtime Parameter Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Backlog Time Alarm - Stop Mode"}
+{"time":"2024-01-30T08:40","doName":"Real Panel Summary","dotype":"Realtime Parameter Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Batch Over - Stop Mode"}
+{"time":"2024-01-30T08:40","doName":"Real Panel Summary","dotype":"Realtime Parameter Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Bottle Sensor Failed - Alarm - Stop Mode"}
+{"time":"2024-01-30T08:40","doName":"Real Panel Summary","dotype":"Realtime Parameter Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Camera 1 Not Ready Alarm - Stop Mode"}
+{"time":"2024-01-30T08:40","doName":"Real Panel Summary","dotype":"Realtime Parameter Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Camera 1 Counter-DLM"}
+{"time":"2024-01-30T08:40","doName":"Real Panel Summary","dotype":"Realtime Parameter Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Camera 3 Counter"}
+{"time":"2024-01-30T08:40","doName":"Real Panel Summary","dotype":"Realtime Parameter Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Good Vials Counter-DLM"}
+{"time":"2024-01-30T13:38","doName":"AttachmentType","dotype":"Attachments Display","logtype":"main","content":"open the DO edit modal","entity":"Cap entity","visibleColumns":[],"tableName":"Cap"}
+{"time":"2024-01-30T13:38","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapDiameter"}
+{"time":"2024-01-30T13:40","doName":"AttachmentType","dotype":"Attachments Display","logtype":"main","content":"open the DO edit modal","entity":"Cap entity","visibleColumns":[],"tableName":"Cap"}
+{"time":"2024-01-30T13:40","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapDiameter"}
+{"time":"2024-01-30T13:40","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapTypeId"}
+{"time":"2024-01-30T13:40","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapName"}
+{"time":"2024-01-30T14:43","doName":"AttachmentType","dotype":"Attachments Display","logtype":"main","content":"open the DO edit modal","entity":"Cap entity","visibleColumns":[],"tableName":"Cap"}
+{"time":"2024-01-30T14:43","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapDiameter"}
+{"time":"2024-01-30T14:44","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapTypeId"}
+{"time":"2024-01-30T14:44","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapName"}
+{"time":"2024-01-30T14:46","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapName"}
+{"time":"2024-01-30T14:46","doName":"AttachmentType","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"Cap entity","ef":"CapTypeId"}

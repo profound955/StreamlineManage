@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.MachineCustomization.AlarmDisplay.EntityPlural");
+}
+
+<div id="Alarm_GridDiv"></div>
+<div id="DisplayObjectType_Color"></div>
+
+@Html.Hidden("DisplayObjectTypeId", "", new { @id = "DisplayObjectTypeId" })
+@Html.Hidden("SubTypeId", "", new { @id = "SubTypeId" })
+
+<script type="text/javascript">
+    jQuery(function () {
+        new CVC.MachineCustomization.AlarmDisplayGrid($('#Alarm_GridDiv'), {}).init();
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>

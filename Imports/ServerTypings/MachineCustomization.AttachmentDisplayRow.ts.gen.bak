@@ -1,0 +1,90 @@
+﻿
+namespace CVC.MachineCustomization {
+    export interface AttachmentDisplayRow {
+        AttachmentDisplayId?: number;
+        AttachmentDisplayName?: string;
+        BackgroundColor?: string;
+        BorderStyle?: number;
+        IsCheckbox?: boolean;
+        Font?: string;
+        FontColorSelected?: string;
+        FontColorUnselected?: string;
+        Activation?: number;
+        IsOpenInNewWindow?: boolean;
+        IsTooltip?: boolean;
+        IsHorizontalScrollBar?: boolean;
+        IsVerticalScrollBar?: boolean;
+        Alignment?: number;
+        IsFolderBrowse?: boolean;
+        IsAddAttachments?: boolean;
+        IsCollapsible?: boolean;
+        AttachmentTypeId?: number;
+        AttachmentTypeAttachmentName?: string;
+        AttachmentTypeCreatedBy?: number;
+        AttachmentTypeCreatedDate?: string;
+        AttachmentTypeUpdatedBy?: number;
+        AttachmentTypeUpdatedDate?: string;
+    }
+
+    export namespace AttachmentDisplayRow {
+        export const idProperty = 'AttachmentDisplayId';
+        export const nameProperty = 'AttachmentDisplayName';
+        export const localTextPrefix = 'MachineCustomization.AttachmentDisplay';
+        export const deletePermission = 'Administration:General';
+        export const insertPermission = 'Administration:General';
+        export const readPermission = 'Administration:General';
+        export const updatePermission = 'Administration:General';
+
+        export namespace Fields {
+            export declare const AttachmentDisplayId;
+            export declare const AttachmentDisplayName;
+            export declare const BackgroundColor;
+            export declare const BorderStyle;
+            export declare const IsCheckbox;
+            export declare const Font;
+            export declare const FontColorSelected;
+            export declare const FontColorUnselected;
+            export declare const Activation;
+            export declare const IsOpenInNewWindow;
+            export declare const IsTooltip;
+            export declare const IsHorizontalScrollBar;
+            export declare const IsVerticalScrollBar;
+            export declare const Alignment;
+            export declare const IsFolderBrowse;
+            export declare const IsAddAttachments;
+            export declare const IsCollapsible;
+            export declare const AttachmentTypeId;
+            export declare const AttachmentTypeAttachmentName;
+            export declare const AttachmentTypeCreatedBy;
+            export declare const AttachmentTypeCreatedDate;
+            export declare const AttachmentTypeUpdatedBy;
+            export declare const AttachmentTypeUpdatedDate;
+        }
+
+        [
+            'AttachmentDisplayId',
+            'AttachmentDisplayName',
+            'BackgroundColor',
+            'BorderStyle',
+            'IsCheckbox',
+            'Font',
+            'FontColorSelected',
+            'FontColorUnselected',
+            'Activation',
+            'IsOpenInNewWindow',
+            'IsTooltip',
+            'IsHorizontalScrollBar',
+            'IsVerticalScrollBar',
+            'Alignment',
+            'IsFolderBrowse',
+            'IsAddAttachments',
+            'IsCollapsible',
+            'AttachmentTypeId',
+            'AttachmentTypeAttachmentName',
+            'AttachmentTypeCreatedBy',
+            'AttachmentTypeCreatedDate',
+            'AttachmentTypeUpdatedBy',
+            'AttachmentTypeUpdatedDate'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}

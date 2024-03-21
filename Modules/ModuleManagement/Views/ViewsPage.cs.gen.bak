@@ -1,0 +1,17 @@
+﻿
+namespace CVC.ModuleManagement.Pages
+{
+    using Serenity;
+    using Serenity.Web;
+    using System.Web.Mvc;
+
+    [RoutePrefix("ModuleManagement/Views"), Route("{action=index}")]
+    [PageAuthorize(typeof(Entities.ViewsRow))]
+    public class ViewsController : Controller
+    {
+        public ActionResult Index()
+        {
+            return View("~/Modules/ModuleManagement/Views/ViewsIndex.cshtml");
+        }
+    }
+}

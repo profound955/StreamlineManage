@@ -1,0 +1,36 @@
+﻿
+namespace CVC.MachineCustomization {
+    export interface DisplayObjectColorRow {
+        ColorId?: number;
+        RangeFrom?: number;
+        RangeTo?: number;
+        Color?: string;
+        DoTypeId?: number;
+    }
+
+    export namespace DisplayObjectColorRow {
+        export const idProperty = 'ColorId';
+        export const nameProperty = 'Color';
+        export const localTextPrefix = 'MachineCustomization.DisplayObjectColor';
+        export const deletePermission = 'Administration:General';
+        export const insertPermission = 'Administration:General';
+        export const readPermission = 'Administration:General';
+        export const updatePermission = 'Administration:General';
+
+        export namespace Fields {
+            export declare const ColorId;
+            export declare const RangeFrom;
+            export declare const RangeTo;
+            export declare const Color;
+            export declare const DoTypeId;
+        }
+
+        [
+            'ColorId',
+            'RangeFrom',
+            'RangeTo',
+            'Color',
+            'DoTypeId'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}

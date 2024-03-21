@@ -1,0 +1,2608 @@
+﻿
+namespace CVC.ModuleManagement.Entities
+{
+    using Serenity;
+    using Serenity.ComponentModel;
+    using Serenity.Data;
+    using Serenity.Data.Mapping;
+    using System;
+    using System.ComponentModel;
+    using System.IO;
+
+    [ConnectionKey("Default"), Module("ModuleManagement"), TableName("[dbo].[Views]")]
+    [DisplayName("Views"), InstanceName("Views")]
+    [ReadPermission("Administration:General")]
+    [ModifyPermission("Administration:General")]
+    public sealed class ViewsRow : Row, IIdRow, INameRow
+    {
+        [DisplayName("Views"), Identity, ForeignKey("[dbo].[Views]", "ViewsId"), LeftJoin("jViews"), TextualField("ViewsViewName")]
+        public Int32? ViewsId
+        {
+            get { return Fields.ViewsId[this]; }
+            set { Fields.ViewsId[this] = value; }
+        }
+
+        [DisplayName("Module"), ForeignKey("[dbo].[Module]", "ModuleId"), LeftJoin("jModule"), TextualField("ModuleModuleName")]
+        public Int32? ModuleId
+        {
+            get { return Fields.ModuleId[this]; }
+            set { Fields.ModuleId[this] = value; }
+        }
+
+        [DisplayName("View Name"), Size(50), QuickSearch]
+        public String ViewName
+        {
+            get { return Fields.ViewName[this]; }
+            set { Fields.ViewName[this] = value; }
+        }
+
+        [DisplayName("Is Access Field Wise")]
+        public Boolean? IsAccessFieldWise
+        {
+            get { return Fields.IsAccessFieldWise[this]; }
+            set { Fields.IsAccessFieldWise[this] = value; }
+        }
+
+        [DisplayName("Status"), ForeignKey("[dbo].[Status]", "StatusId"), LeftJoin("jStatus"), TextualField("StatusStatusName")]
+        public Int32? StatusId
+        {
+            get { return Fields.StatusId[this]; }
+            set { Fields.StatusId[this] = value; }
+        }
+
+        [DisplayName("Created By"), ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jCreatedBy"), TextualField("CreatedByEmployeeId")]
+        public Int32? CreatedBy
+        {
+            get { return Fields.CreatedBy[this]; }
+            set { Fields.CreatedBy[this] = value; }
+        }
+
+        [DisplayName("Created Date")]
+        public DateTime? CreatedDate
+        {
+            get { return Fields.CreatedDate[this]; }
+            set { Fields.CreatedDate[this] = value; }
+        }
+
+        [DisplayName("Updated By"), ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jUpdatedBy"), TextualField("UpdatedByEmployeeId")]
+        public Int32? UpdatedBy
+        {
+            get { return Fields.UpdatedBy[this]; }
+            set { Fields.UpdatedBy[this] = value; }
+        }
+
+        [DisplayName("Updated Date")]
+        public DateTime? UpdatedDate
+        {
+            get { return Fields.UpdatedDate[this]; }
+            set { Fields.UpdatedDate[this] = value; }
+        }
+
+        [DisplayName("Is Machine Settings")]
+        public Boolean? IsMachineSettings
+        {
+            get { return Fields.IsMachineSettings[this]; }
+            set { Fields.IsMachineSettings[this] = value; }
+        }
+
+        [DisplayName("Is Machine Summary")]
+        public Boolean? IsMachineSummary
+        {
+            get { return Fields.IsMachineSummary[this]; }
+            set { Fields.IsMachineSummary[this] = value; }
+        }
+
+        [DisplayName("Islabel Roll")]
+        public Boolean? IslabelRoll
+        {
+            get { return Fields.IslabelRoll[this]; }
+            set { Fields.IslabelRoll[this] = value; }
+        }
+
+        [DisplayName("Is Command Panel")]
+        public Boolean? IsCommandPanel
+        {
+            get { return Fields.IsCommandPanel[this]; }
+            set { Fields.IsCommandPanel[this] = value; }
+        }
+
+        [DisplayName("Is Factory Setting")]
+        public Boolean? IsFactorySetting
+        {
+            get { return Fields.IsFactorySetting[this]; }
+            set { Fields.IsFactorySetting[this] = value; }
+        }
+
+        [DisplayName("Display Object Type Id")]
+        public Int32? DisplayObjectTypeId
+        {
+            get { return Fields.DisplayObjectTypeId[this]; }
+            set { Fields.DisplayObjectTypeId[this] = value; }
+        }
+
+        [DisplayName("Machine"), ForeignKey("[dbo].[Machine]", "MachineId"), LeftJoin("jMachine"), TextualField("MachineMachineName")]
+        public Int32? MachineId
+        {
+            get { return Fields.MachineId[this]; }
+            set { Fields.MachineId[this] = value; }
+        }
+
+        [DisplayName("List Display"), ForeignKey("[dbo].[ListDisplay]", "ListDisplayId"), LeftJoin("jListDisplay"), TextualField("ListDisplayBackgroundColor")]
+        public Int32? ListDisplayId
+        {
+            get { return Fields.ListDisplayId[this]; }
+            set { Fields.ListDisplayId[this] = value; }
+        }
+
+        [DisplayName("Form Display"), ForeignKey("[dbo].[FormDisplay]", "FormDisplayId"), LeftJoin("jFormDisplay"), TextualField("FormDisplayFormDisplayName")]
+        public Int32? FormDisplayId
+        {
+            get { return Fields.FormDisplayId[this]; }
+            set { Fields.FormDisplayId[this] = value; }
+        }
+
+        [DisplayName("Button Display"), ForeignKey("[dbo].[ButtonDisplay]", "ButtonDisplayId"), LeftJoin("jButtonDisplay"), TextualField("ButtonDisplayButtonDisplayName")]
+        public Int32? ButtonDisplayId
+        {
+            get { return Fields.ButtonDisplayId[this]; }
+            set { Fields.ButtonDisplayId[this] = value; }
+        }
+
+        [DisplayName("Realtime Parameter Display"), ForeignKey("[dbo].[RealtimeParameterDisplay]", "RealtimeParameterDisplayId"), LeftJoin("jRealtimeParameterDisplay"), TextualField("RealtimeParameterDisplayRealtimeParameterDisplayName")]
+        public Int32? RealtimeParameterDisplayId
+        {
+            get { return Fields.RealtimeParameterDisplayId[this]; }
+            set { Fields.RealtimeParameterDisplayId[this] = value; }
+        }
+
+        [DisplayName("Line Chart Display"), ForeignKey("[dbo].[LineChartDisplay]", "LineChartDisplayId"), LeftJoin("jLineChartDisplay"), TextualField("LineChartDisplayLineChartDisplayName")]
+        public Int32? LineChartDisplayId
+        {
+            get { return Fields.LineChartDisplayId[this]; }
+            set { Fields.LineChartDisplayId[this] = value; }
+        }
+
+        [DisplayName("Pie Chart Display"), ForeignKey("[dbo].[PieChartDisplay]", "PieChartDisplayId"), LeftJoin("jPieChartDisplay"), TextualField("PieChartDisplayPieChartDisplayName")]
+        public Int32? PieChartDisplayId
+        {
+            get { return Fields.PieChartDisplayId[this]; }
+            set { Fields.PieChartDisplayId[this] = value; }
+        }
+
+        [DisplayName("Tree Display"), ForeignKey("[dbo].[TreeDisplay]", "TreeDisplayId"), LeftJoin("jTreeDisplay"), TextualField("TreeDisplayTreeDisplayName")]
+        public Int32? TreeDisplayId
+        {
+            get { return Fields.TreeDisplayId[this]; }
+            set { Fields.TreeDisplayId[this] = value; }
+        }
+
+        [DisplayName("Attachment Display"), ForeignKey("[dbo].[AttachmentDisplay]", "AttachmentDisplayId"), LeftJoin("jAttachmentDisplay"), TextualField("AttachmentDisplayAttachmentDisplayName")]
+        public Int32? AttachmentDisplayId
+        {
+            get { return Fields.AttachmentDisplayId[this]; }
+            set { Fields.AttachmentDisplayId[this] = value; }
+        }
+
+        [DisplayName("Alarm Display"), ForeignKey("[dbo].[AlarmDisplay]", "AlarmDisplayId"), LeftJoin("jAlarmDisplay"), TextualField("AlarmDisplayAlarmDisplayName")]
+        public Int32? AlarmDisplayId
+        {
+            get { return Fields.AlarmDisplayId[this]; }
+            set { Fields.AlarmDisplayId[this] = value; }
+        }
+
+        [DisplayName("Notification Display"), ForeignKey("[dbo].[NotificationDisplay]", "NotificationDisplayId"), LeftJoin("jNotificationDisplay"), TextualField("NotificationDisplayNotificationDisplayName")]
+        public Int32? NotificationDisplayId
+        {
+            get { return Fields.NotificationDisplayId[this]; }
+            set { Fields.NotificationDisplayId[this] = value; }
+        }
+
+        [DisplayName("Container Display"), ForeignKey("[dbo].[ContainerDisplay]", "ContainerDisplayId"), LeftJoin("jContainerDisplay"), TextualField("ContainerDisplayContainerDisplayName")]
+        public Int32? ContainerDisplayId
+        {
+            get { return Fields.ContainerDisplayId[this]; }
+            set { Fields.ContainerDisplayId[this] = value; }
+        }
+
+        [DisplayName("Views Module Id"), Expression("jViews.[ModuleId]")]
+        public Int32? ViewsModuleId
+        {
+            get { return Fields.ViewsModuleId[this]; }
+            set { Fields.ViewsModuleId[this] = value; }
+        }
+
+        [DisplayName("Views View Name"), Expression("jViews.[ViewName]")]
+        public String ViewsViewName
+        {
+            get { return Fields.ViewsViewName[this]; }
+            set { Fields.ViewsViewName[this] = value; }
+        }
+
+        [DisplayName("Views Is Access Field Wise"), Expression("jViews.[IsAccessFieldWise]")]
+        public Boolean? ViewsIsAccessFieldWise
+        {
+            get { return Fields.ViewsIsAccessFieldWise[this]; }
+            set { Fields.ViewsIsAccessFieldWise[this] = value; }
+        }
+
+        [DisplayName("Views Status Id"), Expression("jViews.[StatusId]")]
+        public Int32? ViewsStatusId
+        {
+            get { return Fields.ViewsStatusId[this]; }
+            set { Fields.ViewsStatusId[this] = value; }
+        }
+
+        [DisplayName("Views Created By"), Expression("jViews.[CreatedBy]")]
+        public Int32? ViewsCreatedBy
+        {
+            get { return Fields.ViewsCreatedBy[this]; }
+            set { Fields.ViewsCreatedBy[this] = value; }
+        }
+
+        [DisplayName("Views Created Date"), Expression("jViews.[CreatedDate]")]
+        public DateTime? ViewsCreatedDate
+        {
+            get { return Fields.ViewsCreatedDate[this]; }
+            set { Fields.ViewsCreatedDate[this] = value; }
+        }
+
+        [DisplayName("Views Updated By"), Expression("jViews.[UpdatedBy]")]
+        public Int32? ViewsUpdatedBy
+        {
+            get { return Fields.ViewsUpdatedBy[this]; }
+            set { Fields.ViewsUpdatedBy[this] = value; }
+        }
+
+        [DisplayName("Views Updated Date"), Expression("jViews.[UpdatedDate]")]
+        public DateTime? ViewsUpdatedDate
+        {
+            get { return Fields.ViewsUpdatedDate[this]; }
+            set { Fields.ViewsUpdatedDate[this] = value; }
+        }
+
+        [DisplayName("Views Is Machine Settings"), Expression("jViews.[IsMachineSettings]")]
+        public Boolean? ViewsIsMachineSettings
+        {
+            get { return Fields.ViewsIsMachineSettings[this]; }
+            set { Fields.ViewsIsMachineSettings[this] = value; }
+        }
+
+        [DisplayName("Views Is Machine Summary"), Expression("jViews.[IsMachineSummary]")]
+        public Boolean? ViewsIsMachineSummary
+        {
+            get { return Fields.ViewsIsMachineSummary[this]; }
+            set { Fields.ViewsIsMachineSummary[this] = value; }
+        }
+
+        [DisplayName("Views Islabel Roll"), Expression("jViews.[IslabelRoll]")]
+        public Boolean? ViewsIslabelRoll
+        {
+            get { return Fields.ViewsIslabelRoll[this]; }
+            set { Fields.ViewsIslabelRoll[this] = value; }
+        }
+
+        [DisplayName("Views Is Command Panel"), Expression("jViews.[IsCommandPanel]")]
+        public Boolean? ViewsIsCommandPanel
+        {
+            get { return Fields.ViewsIsCommandPanel[this]; }
+            set { Fields.ViewsIsCommandPanel[this] = value; }
+        }
+
+        [DisplayName("Views Is Factory Setting"), Expression("jViews.[IsFactorySetting]")]
+        public Boolean? ViewsIsFactorySetting
+        {
+            get { return Fields.ViewsIsFactorySetting[this]; }
+            set { Fields.ViewsIsFactorySetting[this] = value; }
+        }
+
+        [DisplayName("Views Display Object Type Id"), Expression("jViews.[DisplayObjectTypeId]")]
+        public Int32? ViewsDisplayObjectTypeId
+        {
+            get { return Fields.ViewsDisplayObjectTypeId[this]; }
+            set { Fields.ViewsDisplayObjectTypeId[this] = value; }
+        }
+
+        [DisplayName("Views Machine Id"), Expression("jViews.[MachineId]")]
+        public Int32? ViewsMachineId
+        {
+            get { return Fields.ViewsMachineId[this]; }
+            set { Fields.ViewsMachineId[this] = value; }
+        }
+
+        [DisplayName("Views List Display Id"), Expression("jViews.[ListDisplayId]")]
+        public Int32? ViewsListDisplayId
+        {
+            get { return Fields.ViewsListDisplayId[this]; }
+            set { Fields.ViewsListDisplayId[this] = value; }
+        }
+
+        [DisplayName("Views Form Display Id"), Expression("jViews.[FormDisplayId]")]
+        public Int32? ViewsFormDisplayId
+        {
+            get { return Fields.ViewsFormDisplayId[this]; }
+            set { Fields.ViewsFormDisplayId[this] = value; }
+        }
+
+        [DisplayName("Views Button Display Id"), Expression("jViews.[ButtonDisplayId]")]
+        public Int32? ViewsButtonDisplayId
+        {
+            get { return Fields.ViewsButtonDisplayId[this]; }
+            set { Fields.ViewsButtonDisplayId[this] = value; }
+        }
+
+        [DisplayName("Views Realtime Parameter Display Id"), Expression("jViews.[RealtimeParameterDisplayId]")]
+        public Int32? ViewsRealtimeParameterDisplayId
+        {
+            get { return Fields.ViewsRealtimeParameterDisplayId[this]; }
+            set { Fields.ViewsRealtimeParameterDisplayId[this] = value; }
+        }
+
+        [DisplayName("Views Line Chart Display Id"), Expression("jViews.[LineChartDisplayId]")]
+        public Int32? ViewsLineChartDisplayId
+        {
+            get { return Fields.ViewsLineChartDisplayId[this]; }
+            set { Fields.ViewsLineChartDisplayId[this] = value; }
+        }
+
+        [DisplayName("Views Pie Chart Display Id"), Expression("jViews.[PieChartDisplayId]")]
+        public Int32? ViewsPieChartDisplayId
+        {
+            get { return Fields.ViewsPieChartDisplayId[this]; }
+            set { Fields.ViewsPieChartDisplayId[this] = value; }
+        }
+
+        [DisplayName("Views Tree Display Id"), Expression("jViews.[TreeDisplayId]")]
+        public Int32? ViewsTreeDisplayId
+        {
+            get { return Fields.ViewsTreeDisplayId[this]; }
+            set { Fields.ViewsTreeDisplayId[this] = value; }
+        }
+
+        [DisplayName("Views Attachment Display Id"), Expression("jViews.[AttachmentDisplayId]")]
+        public Int32? ViewsAttachmentDisplayId
+        {
+            get { return Fields.ViewsAttachmentDisplayId[this]; }
+            set { Fields.ViewsAttachmentDisplayId[this] = value; }
+        }
+
+        [DisplayName("Views Alarm Display Id"), Expression("jViews.[AlarmDisplayId]")]
+        public Int32? ViewsAlarmDisplayId
+        {
+            get { return Fields.ViewsAlarmDisplayId[this]; }
+            set { Fields.ViewsAlarmDisplayId[this] = value; }
+        }
+
+        [DisplayName("Views Notification Display Id"), Expression("jViews.[NotificationDisplayId]")]
+        public Int32? ViewsNotificationDisplayId
+        {
+            get { return Fields.ViewsNotificationDisplayId[this]; }
+            set { Fields.ViewsNotificationDisplayId[this] = value; }
+        }
+
+        [DisplayName("Views Container Display Id"), Expression("jViews.[ContainerDisplayId]")]
+        public Int32? ViewsContainerDisplayId
+        {
+            get { return Fields.ViewsContainerDisplayId[this]; }
+            set { Fields.ViewsContainerDisplayId[this] = value; }
+        }
+
+        [DisplayName("Module Module Name"), Expression("jModule.[ModuleName]")]
+        public String ModuleModuleName
+        {
+            get { return Fields.ModuleModuleName[this]; }
+            set { Fields.ModuleModuleName[this] = value; }
+        }
+
+        [DisplayName("Module Machine Id"), Expression("jModule.[MachineId]")]
+        public Int32? ModuleMachineId
+        {
+            get { return Fields.ModuleMachineId[this]; }
+            set { Fields.ModuleMachineId[this] = value; }
+        }
+
+        [DisplayName("Module Status Id"), Expression("jModule.[StatusId]")]
+        public Int32? ModuleStatusId
+        {
+            get { return Fields.ModuleStatusId[this]; }
+            set { Fields.ModuleStatusId[this] = value; }
+        }
+
+        [DisplayName("Module Created By"), Expression("jModule.[CreatedBy]")]
+        public Int32? ModuleCreatedBy
+        {
+            get { return Fields.ModuleCreatedBy[this]; }
+            set { Fields.ModuleCreatedBy[this] = value; }
+        }
+
+        [DisplayName("Module Created Date"), Expression("jModule.[CreatedDate]")]
+        public DateTime? ModuleCreatedDate
+        {
+            get { return Fields.ModuleCreatedDate[this]; }
+            set { Fields.ModuleCreatedDate[this] = value; }
+        }
+
+        [DisplayName("Module Updated By"), Expression("jModule.[UpdatedBy]")]
+        public Int32? ModuleUpdatedBy
+        {
+            get { return Fields.ModuleUpdatedBy[this]; }
+            set { Fields.ModuleUpdatedBy[this] = value; }
+        }
+
+        [DisplayName("Module Updated Date"), Expression("jModule.[UpdatedDate]")]
+        public DateTime? ModuleUpdatedDate
+        {
+            get { return Fields.ModuleUpdatedDate[this]; }
+            set { Fields.ModuleUpdatedDate[this] = value; }
+        }
+
+        [DisplayName("Module Sequence"), Expression("jModule.[Sequence]")]
+        public Int32? ModuleSequence
+        {
+            get { return Fields.ModuleSequence[this]; }
+            set { Fields.ModuleSequence[this] = value; }
+        }
+
+        [DisplayName("Module Equipment Id"), Expression("jModule.[EquipmentID]")]
+        public String ModuleEquipmentId
+        {
+            get { return Fields.ModuleEquipmentId[this]; }
+            set { Fields.ModuleEquipmentId[this] = value; }
+        }
+
+        [DisplayName("Module Serial Number"), Expression("jModule.[SerialNumber]")]
+        public String ModuleSerialNumber
+        {
+            get { return Fields.ModuleSerialNumber[this]; }
+            set { Fields.ModuleSerialNumber[this] = value; }
+        }
+
+        [DisplayName("Status Status Name"), Expression("jStatus.[StatusName]")]
+        public String StatusStatusName
+        {
+            get { return Fields.StatusStatusName[this]; }
+            set { Fields.StatusStatusName[this] = value; }
+        }
+
+        [DisplayName("Created By Employee Id"), Expression("jCreatedBy.[EmployeeId]")]
+        public String CreatedByEmployeeId
+        {
+            get { return Fields.CreatedByEmployeeId[this]; }
+            set { Fields.CreatedByEmployeeId[this] = value; }
+        }
+
+        [DisplayName("Created By First Name"), Expression("jCreatedBy.[FirstName]")]
+        public String CreatedByFirstName
+        {
+            get { return Fields.CreatedByFirstName[this]; }
+            set { Fields.CreatedByFirstName[this] = value; }
+        }
+
+        [DisplayName("Created By Last Name"), Expression("jCreatedBy.[LastName]")]
+        public String CreatedByLastName
+        {
+            get { return Fields.CreatedByLastName[this]; }
+            set { Fields.CreatedByLastName[this] = value; }
+        }
+
+        [DisplayName("Created By Department Id"), Expression("jCreatedBy.[DepartmentId]")]
+        public Int32? CreatedByDepartmentId
+        {
+            get { return Fields.CreatedByDepartmentId[this]; }
+            set { Fields.CreatedByDepartmentId[this] = value; }
+        }
+
+        [DisplayName("Created By Designation"), Expression("jCreatedBy.[Designation]")]
+        public String CreatedByDesignation
+        {
+            get { return Fields.CreatedByDesignation[this]; }
+            set { Fields.CreatedByDesignation[this] = value; }
+        }
+
+        [DisplayName("Created By Mobile Code"), Expression("jCreatedBy.[MobileCode]")]
+        public Int32? CreatedByMobileCode
+        {
+            get { return Fields.CreatedByMobileCode[this]; }
+            set { Fields.CreatedByMobileCode[this] = value; }
+        }
+
+        [DisplayName("Created By Mobile Number"), Expression("jCreatedBy.[MobileNumber]")]
+        public Int64? CreatedByMobileNumber
+        {
+            get { return Fields.CreatedByMobileNumber[this]; }
+            set { Fields.CreatedByMobileNumber[this] = value; }
+        }
+
+        [DisplayName("Created By Email"), Expression("jCreatedBy.[Email]")]
+        public String CreatedByEmail
+        {
+            get { return Fields.CreatedByEmail[this]; }
+            set { Fields.CreatedByEmail[this] = value; }
+        }
+
+        [DisplayName("Created By Username"), Expression("jCreatedBy.[Username]")]
+        public String CreatedByUsername
+        {
+            get { return Fields.CreatedByUsername[this]; }
+            set { Fields.CreatedByUsername[this] = value; }
+        }
+
+        [DisplayName("Created By Password Hash"), Expression("jCreatedBy.[PasswordHash]")]
+        public String CreatedByPasswordHash
+        {
+            get { return Fields.CreatedByPasswordHash[this]; }
+            set { Fields.CreatedByPasswordHash[this] = value; }
+        }
+
+        [DisplayName("Created By Password Salt"), Expression("jCreatedBy.[PasswordSalt]")]
+        public String CreatedByPasswordSalt
+        {
+            get { return Fields.CreatedByPasswordSalt[this]; }
+            set { Fields.CreatedByPasswordSalt[this] = value; }
+        }
+
+        [DisplayName("Created By User Image"), Expression("jCreatedBy.[UserImage]")]
+        public String CreatedByUserImage
+        {
+            get { return Fields.CreatedByUserImage[this]; }
+            set { Fields.CreatedByUserImage[this] = value; }
+        }
+
+        [DisplayName("Created By Address"), Expression("jCreatedBy.[Address]")]
+        public String CreatedByAddress
+        {
+            get { return Fields.CreatedByAddress[this]; }
+            set { Fields.CreatedByAddress[this] = value; }
+        }
+
+        [DisplayName("Created By City Id"), Expression("jCreatedBy.[CityId]")]
+        public Int32? CreatedByCityId
+        {
+            get { return Fields.CreatedByCityId[this]; }
+            set { Fields.CreatedByCityId[this] = value; }
+        }
+
+        [DisplayName("Created By Pin Code"), Expression("jCreatedBy.[PinCode]")]
+        public String CreatedByPinCode
+        {
+            get { return Fields.CreatedByPinCode[this]; }
+            set { Fields.CreatedByPinCode[this] = value; }
+        }
+
+        [DisplayName("Created By Role Id"), Expression("jCreatedBy.[RoleId]")]
+        public Int32? CreatedByRoleId
+        {
+            get { return Fields.CreatedByRoleId[this]; }
+            set { Fields.CreatedByRoleId[this] = value; }
+        }
+
+        [DisplayName("Created By Password Expiry Date"), Expression("jCreatedBy.[PasswordExpiryDate]")]
+        public DateTime? CreatedByPasswordExpiryDate
+        {
+            get { return Fields.CreatedByPasswordExpiryDate[this]; }
+            set { Fields.CreatedByPasswordExpiryDate[this] = value; }
+        }
+
+        [DisplayName("Created By Is Forgot Password"), Expression("jCreatedBy.[IsForgotPassword]")]
+        public Boolean? CreatedByIsForgotPassword
+        {
+            get { return Fields.CreatedByIsForgotPassword[this]; }
+            set { Fields.CreatedByIsForgotPassword[this] = value; }
+        }
+
+        [DisplayName("Created By Is Password Change On Login"), Expression("jCreatedBy.[IsPasswordChangeOnLogin]")]
+        public Boolean? CreatedByIsPasswordChangeOnLogin
+        {
+            get { return Fields.CreatedByIsPasswordChangeOnLogin[this]; }
+            set { Fields.CreatedByIsPasswordChangeOnLogin[this] = value; }
+        }
+
+        [DisplayName("Created By Is User Hidden"), Expression("jCreatedBy.[IsUserHidden]")]
+        public Boolean? CreatedByIsUserHidden
+        {
+            get { return Fields.CreatedByIsUserHidden[this]; }
+            set { Fields.CreatedByIsUserHidden[this] = value; }
+        }
+
+        [DisplayName("Created By Birth Date"), Expression("jCreatedBy.[BirthDate]")]
+        public DateTime? CreatedByBirthDate
+        {
+            get { return Fields.CreatedByBirthDate[this]; }
+            set { Fields.CreatedByBirthDate[this] = value; }
+        }
+
+        [DisplayName("Created By Status Id"), Expression("jCreatedBy.[StatusId]")]
+        public Int32? CreatedByStatusId
+        {
+            get { return Fields.CreatedByStatusId[this]; }
+            set { Fields.CreatedByStatusId[this] = value; }
+        }
+
+        [DisplayName("Created By"), Expression("jCreatedBy.[CreatedBy]")]
+        public Int32? CreatedBy1
+        {
+            get { return Fields.CreatedBy1[this]; }
+            set { Fields.CreatedBy1[this] = value; }
+        }
+
+        [DisplayName("Created By Created Date"), Expression("jCreatedBy.[CreatedDate]")]
+        public DateTime? CreatedByCreatedDate
+        {
+            get { return Fields.CreatedByCreatedDate[this]; }
+            set { Fields.CreatedByCreatedDate[this] = value; }
+        }
+
+        [DisplayName("Created By Updated By"), Expression("jCreatedBy.[UpdatedBy]")]
+        public Int32? CreatedByUpdatedBy
+        {
+            get { return Fields.CreatedByUpdatedBy[this]; }
+            set { Fields.CreatedByUpdatedBy[this] = value; }
+        }
+
+        [DisplayName("Created By Updated Date"), Expression("jCreatedBy.[UpdatedDate]")]
+        public DateTime? CreatedByUpdatedDate
+        {
+            get { return Fields.CreatedByUpdatedDate[this]; }
+            set { Fields.CreatedByUpdatedDate[this] = value; }
+        }
+
+        [DisplayName("Created By Question Id"), Expression("jCreatedBy.[QuestionId]")]
+        public Int32? CreatedByQuestionId
+        {
+            get { return Fields.CreatedByQuestionId[this]; }
+            set { Fields.CreatedByQuestionId[this] = value; }
+        }
+
+        [DisplayName("Created By Question Ans"), Expression("jCreatedBy.[QuestionAns]")]
+        public String CreatedByQuestionAns
+        {
+            get { return Fields.CreatedByQuestionAns[this]; }
+            set { Fields.CreatedByQuestionAns[this] = value; }
+        }
+
+        [DisplayName("Created By Is Lock Out"), Expression("jCreatedBy.[IsLockOut]")]
+        public Boolean? CreatedByIsLockOut
+        {
+            get { return Fields.CreatedByIsLockOut[this]; }
+            set { Fields.CreatedByIsLockOut[this] = value; }
+        }
+
+        [DisplayName("Created By Lock Out Date Time"), Expression("jCreatedBy.[LockOutDateTime]")]
+        public DateTime? CreatedByLockOutDateTime
+        {
+            get { return Fields.CreatedByLockOutDateTime[this]; }
+            set { Fields.CreatedByLockOutDateTime[this] = value; }
+        }
+
+        [DisplayName("Created By Log In Attempt"), Expression("jCreatedBy.[LogInAttempt]")]
+        public Int32? CreatedByLogInAttempt
+        {
+            get { return Fields.CreatedByLogInAttempt[this]; }
+            set { Fields.CreatedByLogInAttempt[this] = value; }
+        }
+
+        [DisplayName("Created By Is Active Directory"), Expression("jCreatedBy.[IsActiveDirectory]")]
+        public Boolean? CreatedByIsActiveDirectory
+        {
+            get { return Fields.CreatedByIsActiveDirectory[this]; }
+            set { Fields.CreatedByIsActiveDirectory[this] = value; }
+        }
+
+        [DisplayName("Created By Machine Id"), Expression("jCreatedBy.[MachineId]")]
+        public String CreatedByMachineId
+        {
+            get { return Fields.CreatedByMachineId[this]; }
+            set { Fields.CreatedByMachineId[this] = value; }
+        }
+
+        [DisplayName("Created By Record Added Source"), Expression("jCreatedBy.[RecordAddedSource]")]
+        public String CreatedByRecordAddedSource
+        {
+            get { return Fields.CreatedByRecordAddedSource[this]; }
+            set { Fields.CreatedByRecordAddedSource[this] = value; }
+        }
+
+        [DisplayName("Updated By Employee Id"), Expression("jUpdatedBy.[EmployeeId]")]
+        public String UpdatedByEmployeeId
+        {
+            get { return Fields.UpdatedByEmployeeId[this]; }
+            set { Fields.UpdatedByEmployeeId[this] = value; }
+        }
+
+        [DisplayName("Updated By First Name"), Expression("jUpdatedBy.[FirstName]")]
+        public String UpdatedByFirstName
+        {
+            get { return Fields.UpdatedByFirstName[this]; }
+            set { Fields.UpdatedByFirstName[this] = value; }
+        }
+
+        [DisplayName("Updated By Last Name"), Expression("jUpdatedBy.[LastName]")]
+        public String UpdatedByLastName
+        {
+            get { return Fields.UpdatedByLastName[this]; }
+            set { Fields.UpdatedByLastName[this] = value; }
+        }
+
+        [DisplayName("Updated By Department Id"), Expression("jUpdatedBy.[DepartmentId]")]
+        public Int32? UpdatedByDepartmentId
+        {
+            get { return Fields.UpdatedByDepartmentId[this]; }
+            set { Fields.UpdatedByDepartmentId[this] = value; }
+        }
+
+        [DisplayName("Updated By Designation"), Expression("jUpdatedBy.[Designation]")]
+        public String UpdatedByDesignation
+        {
+            get { return Fields.UpdatedByDesignation[this]; }
+            set { Fields.UpdatedByDesignation[this] = value; }
+        }
+
+        [DisplayName("Updated By Mobile Code"), Expression("jUpdatedBy.[MobileCode]")]
+        public Int32? UpdatedByMobileCode
+        {
+            get { return Fields.UpdatedByMobileCode[this]; }
+            set { Fields.UpdatedByMobileCode[this] = value; }
+        }
+
+        [DisplayName("Updated By Mobile Number"), Expression("jUpdatedBy.[MobileNumber]")]
+        public Int64? UpdatedByMobileNumber
+        {
+            get { return Fields.UpdatedByMobileNumber[this]; }
+            set { Fields.UpdatedByMobileNumber[this] = value; }
+        }
+
+        [DisplayName("Updated By Email"), Expression("jUpdatedBy.[Email]")]
+        public String UpdatedByEmail
+        {
+            get { return Fields.UpdatedByEmail[this]; }
+            set { Fields.UpdatedByEmail[this] = value; }
+        }
+
+        [DisplayName("Updated By Username"), Expression("jUpdatedBy.[Username]")]
+        public String UpdatedByUsername
+        {
+            get { return Fields.UpdatedByUsername[this]; }
+            set { Fields.UpdatedByUsername[this] = value; }
+        }
+
+        [DisplayName("Updated By Password Hash"), Expression("jUpdatedBy.[PasswordHash]")]
+        public String UpdatedByPasswordHash
+        {
+            get { return Fields.UpdatedByPasswordHash[this]; }
+            set { Fields.UpdatedByPasswordHash[this] = value; }
+        }
+
+        [DisplayName("Updated By Password Salt"), Expression("jUpdatedBy.[PasswordSalt]")]
+        public String UpdatedByPasswordSalt
+        {
+            get { return Fields.UpdatedByPasswordSalt[this]; }
+            set { Fields.UpdatedByPasswordSalt[this] = value; }
+        }
+
+        [DisplayName("Updated By User Image"), Expression("jUpdatedBy.[UserImage]")]
+        public String UpdatedByUserImage
+        {
+            get { return Fields.UpdatedByUserImage[this]; }
+            set { Fields.UpdatedByUserImage[this] = value; }
+        }
+
+        [DisplayName("Updated By Address"), Expression("jUpdatedBy.[Address]")]
+        public String UpdatedByAddress
+        {
+            get { return Fields.UpdatedByAddress[this]; }
+            set { Fields.UpdatedByAddress[this] = value; }
+        }
+
+        [DisplayName("Updated By City Id"), Expression("jUpdatedBy.[CityId]")]
+        public Int32? UpdatedByCityId
+        {
+            get { return Fields.UpdatedByCityId[this]; }
+            set { Fields.UpdatedByCityId[this] = value; }
+        }
+
+        [DisplayName("Updated By Pin Code"), Expression("jUpdatedBy.[PinCode]")]
+        public String UpdatedByPinCode
+        {
+            get { return Fields.UpdatedByPinCode[this]; }
+            set { Fields.UpdatedByPinCode[this] = value; }
+        }
+
+        [DisplayName("Updated By Role Id"), Expression("jUpdatedBy.[RoleId]")]
+        public Int32? UpdatedByRoleId
+        {
+            get { return Fields.UpdatedByRoleId[this]; }
+            set { Fields.UpdatedByRoleId[this] = value; }
+        }
+
+        [DisplayName("Updated By Password Expiry Date"), Expression("jUpdatedBy.[PasswordExpiryDate]")]
+        public DateTime? UpdatedByPasswordExpiryDate
+        {
+            get { return Fields.UpdatedByPasswordExpiryDate[this]; }
+            set { Fields.UpdatedByPasswordExpiryDate[this] = value; }
+        }
+
+        [DisplayName("Updated By Is Forgot Password"), Expression("jUpdatedBy.[IsForgotPassword]")]
+        public Boolean? UpdatedByIsForgotPassword
+        {
+            get { return Fields.UpdatedByIsForgotPassword[this]; }
+            set { Fields.UpdatedByIsForgotPassword[this] = value; }
+        }
+
+        [DisplayName("Updated By Is Password Change On Login"), Expression("jUpdatedBy.[IsPasswordChangeOnLogin]")]
+        public Boolean? UpdatedByIsPasswordChangeOnLogin
+        {
+            get { return Fields.UpdatedByIsPasswordChangeOnLogin[this]; }
+            set { Fields.UpdatedByIsPasswordChangeOnLogin[this] = value; }
+        }
+
+        [DisplayName("Updated By Is User Hidden"), Expression("jUpdatedBy.[IsUserHidden]")]
+        public Boolean? UpdatedByIsUserHidden
+        {
+            get { return Fields.UpdatedByIsUserHidden[this]; }
+            set { Fields.UpdatedByIsUserHidden[this] = value; }
+        }
+
+        [DisplayName("Updated By Birth Date"), Expression("jUpdatedBy.[BirthDate]")]
+        public DateTime? UpdatedByBirthDate
+        {
+            get { return Fields.UpdatedByBirthDate[this]; }
+            set { Fields.UpdatedByBirthDate[this] = value; }
+        }
+
+        [DisplayName("Updated By Status Id"), Expression("jUpdatedBy.[StatusId]")]
+        public Int32? UpdatedByStatusId
+        {
+            get { return Fields.UpdatedByStatusId[this]; }
+            set { Fields.UpdatedByStatusId[this] = value; }
+        }
+
+        [DisplayName("Updated By Created By"), Expression("jUpdatedBy.[CreatedBy]")]
+        public Int32? UpdatedByCreatedBy
+        {
+            get { return Fields.UpdatedByCreatedBy[this]; }
+            set { Fields.UpdatedByCreatedBy[this] = value; }
+        }
+
+        [DisplayName("Updated By Created Date"), Expression("jUpdatedBy.[CreatedDate]")]
+        public DateTime? UpdatedByCreatedDate
+        {
+            get { return Fields.UpdatedByCreatedDate[this]; }
+            set { Fields.UpdatedByCreatedDate[this] = value; }
+        }
+
+        [DisplayName("Updated By"), Expression("jUpdatedBy.[UpdatedBy]")]
+        public Int32? UpdatedBy1
+        {
+            get { return Fields.UpdatedBy1[this]; }
+            set { Fields.UpdatedBy1[this] = value; }
+        }
+
+        [DisplayName("Updated By Updated Date"), Expression("jUpdatedBy.[UpdatedDate]")]
+        public DateTime? UpdatedByUpdatedDate
+        {
+            get { return Fields.UpdatedByUpdatedDate[this]; }
+            set { Fields.UpdatedByUpdatedDate[this] = value; }
+        }
+
+        [DisplayName("Updated By Question Id"), Expression("jUpdatedBy.[QuestionId]")]
+        public Int32? UpdatedByQuestionId
+        {
+            get { return Fields.UpdatedByQuestionId[this]; }
+            set { Fields.UpdatedByQuestionId[this] = value; }
+        }
+
+        [DisplayName("Updated By Question Ans"), Expression("jUpdatedBy.[QuestionAns]")]
+        public String UpdatedByQuestionAns
+        {
+            get { return Fields.UpdatedByQuestionAns[this]; }
+            set { Fields.UpdatedByQuestionAns[this] = value; }
+        }
+
+        [DisplayName("Updated By Is Lock Out"), Expression("jUpdatedBy.[IsLockOut]")]
+        public Boolean? UpdatedByIsLockOut
+        {
+            get { return Fields.UpdatedByIsLockOut[this]; }
+            set { Fields.UpdatedByIsLockOut[this] = value; }
+        }
+
+        [DisplayName("Updated By Lock Out Date Time"), Expression("jUpdatedBy.[LockOutDateTime]")]
+        public DateTime? UpdatedByLockOutDateTime
+        {
+            get { return Fields.UpdatedByLockOutDateTime[this]; }
+            set { Fields.UpdatedByLockOutDateTime[this] = value; }
+        }
+
+        [DisplayName("Updated By Log In Attempt"), Expression("jUpdatedBy.[LogInAttempt]")]
+        public Int32? UpdatedByLogInAttempt
+        {
+            get { return Fields.UpdatedByLogInAttempt[this]; }
+            set { Fields.UpdatedByLogInAttempt[this] = value; }
+        }
+
+        [DisplayName("Updated By Is Active Directory"), Expression("jUpdatedBy.[IsActiveDirectory]")]
+        public Boolean? UpdatedByIsActiveDirectory
+        {
+            get { return Fields.UpdatedByIsActiveDirectory[this]; }
+            set { Fields.UpdatedByIsActiveDirectory[this] = value; }
+        }
+
+        [DisplayName("Updated By Machine Id"), Expression("jUpdatedBy.[MachineId]")]
+        public String UpdatedByMachineId
+        {
+            get { return Fields.UpdatedByMachineId[this]; }
+            set { Fields.UpdatedByMachineId[this] = value; }
+        }
+
+        [DisplayName("Updated By Record Added Source"), Expression("jUpdatedBy.[RecordAddedSource]")]
+        public String UpdatedByRecordAddedSource
+        {
+            get { return Fields.UpdatedByRecordAddedSource[this]; }
+            set { Fields.UpdatedByRecordAddedSource[this] = value; }
+        }
+
+        [DisplayName("Machine Machine Line Id"), Expression("jMachine.[MachineLineId]")]
+        public Int32? MachineMachineLineId
+        {
+            get { return Fields.MachineMachineLineId[this]; }
+            set { Fields.MachineMachineLineId[this] = value; }
+        }
+
+        [DisplayName("Machine Machine Name"), Expression("jMachine.[MachineName]")]
+        public String MachineMachineName
+        {
+            get { return Fields.MachineMachineName[this]; }
+            set { Fields.MachineMachineName[this] = value; }
+        }
+
+        [DisplayName("Machine Model Number"), Expression("jMachine.[ModelNumber]")]
+        public String MachineModelNumber
+        {
+            get { return Fields.MachineModelNumber[this]; }
+            set { Fields.MachineModelNumber[this] = value; }
+        }
+
+        [DisplayName("Machine Serial Number"), Expression("jMachine.[SerialNumber]")]
+        public String MachineSerialNumber
+        {
+            get { return Fields.MachineSerialNumber[this]; }
+            set { Fields.MachineSerialNumber[this] = value; }
+        }
+
+        [DisplayName("Machine Make"), Expression("jMachine.[Make]")]
+        public String MachineMake
+        {
+            get { return Fields.MachineMake[this]; }
+            set { Fields.MachineMake[this] = value; }
+        }
+
+        [DisplayName("Machine Year"), Expression("jMachine.[Year]")]
+        public Int32? MachineYear
+        {
+            get { return Fields.MachineYear[this]; }
+            set { Fields.MachineYear[this] = value; }
+        }
+
+        [DisplayName("Machine Plc Make"), Expression("jMachine.[PlcMake]")]
+        public String MachinePlcMake
+        {
+            get { return Fields.MachinePlcMake[this]; }
+            set { Fields.MachinePlcMake[this] = value; }
+        }
+
+        [DisplayName("Machine Plc Model Number"), Expression("jMachine.[PlcModelNumber]")]
+        public String MachinePlcModelNumber
+        {
+            get { return Fields.MachinePlcModelNumber[this]; }
+            set { Fields.MachinePlcModelNumber[this] = value; }
+        }
+
+        [DisplayName("Machine Plc Serial Number"), Expression("jMachine.[PlcSerialNumber]")]
+        public String MachinePlcSerialNumber
+        {
+            get { return Fields.MachinePlcSerialNumber[this]; }
+            set { Fields.MachinePlcSerialNumber[this] = value; }
+        }
+
+        [DisplayName("Machine Plc Address"), Expression("jMachine.[PLCAddress]")]
+        public String MachinePlcAddress
+        {
+            get { return Fields.MachinePlcAddress[this]; }
+            set { Fields.MachinePlcAddress[this] = value; }
+        }
+
+        [DisplayName("Machine Access Ip Address"), Expression("jMachine.[AccessIPAddress]")]
+        public String MachineAccessIpAddress
+        {
+            get { return Fields.MachineAccessIpAddress[this]; }
+            set { Fields.MachineAccessIpAddress[this] = value; }
+        }
+
+        [DisplayName("Machine Machine Sequence"), Expression("jMachine.[MachineSequence]")]
+        public Int32? MachineMachineSequence
+        {
+            get { return Fields.MachineMachineSequence[this]; }
+            set { Fields.MachineMachineSequence[this] = value; }
+        }
+
+        [DisplayName("Machine Machine Image"), Expression("jMachine.[MachineImage]")]
+        public byte[] MachineMachineImage
+        {
+            get { return Fields.MachineMachineImage[this]; }
+            set { Fields.MachineMachineImage[this] = value; }
+        }
+
+        [DisplayName("Machine Machine Type Id"), Expression("jMachine.[MachineTypeID]")]
+        public Int32? MachineMachineTypeId
+        {
+            get { return Fields.MachineMachineTypeId[this]; }
+            set { Fields.MachineMachineTypeId[this] = value; }
+        }
+
+        [DisplayName("Machine Status Id"), Expression("jMachine.[StatusId]")]
+        public Int32? MachineStatusId
+        {
+            get { return Fields.MachineStatusId[this]; }
+            set { Fields.MachineStatusId[this] = value; }
+        }
+
+        [DisplayName("Machine Description"), Expression("jMachine.[Description]")]
+        public String MachineDescription
+        {
+            get { return Fields.MachineDescription[this]; }
+            set { Fields.MachineDescription[this] = value; }
+        }
+
+        [DisplayName("Machine Created By"), Expression("jMachine.[CreatedBy]")]
+        public Int32? MachineCreatedBy
+        {
+            get { return Fields.MachineCreatedBy[this]; }
+            set { Fields.MachineCreatedBy[this] = value; }
+        }
+
+        [DisplayName("Machine Created Date"), Expression("jMachine.[CreatedDate]")]
+        public DateTime? MachineCreatedDate
+        {
+            get { return Fields.MachineCreatedDate[this]; }
+            set { Fields.MachineCreatedDate[this] = value; }
+        }
+
+        [DisplayName("Machine Updated By"), Expression("jMachine.[UpdatedBy]")]
+        public Int32? MachineUpdatedBy
+        {
+            get { return Fields.MachineUpdatedBy[this]; }
+            set { Fields.MachineUpdatedBy[this] = value; }
+        }
+
+        [DisplayName("Machine Updated Date"), Expression("jMachine.[UpdatedDate]")]
+        public DateTime? MachineUpdatedDate
+        {
+            get { return Fields.MachineUpdatedDate[this]; }
+            set { Fields.MachineUpdatedDate[this] = value; }
+        }
+
+        [DisplayName("Machine Equipment Id"), Expression("jMachine.[EquipmentID]")]
+        public String MachineEquipmentId
+        {
+            get { return Fields.MachineEquipmentId[this]; }
+            set { Fields.MachineEquipmentId[this] = value; }
+        }
+
+        [DisplayName("Machine Timer For Alarm"), Expression("jMachine.[TimerForAlarm]")]
+        public Int32? MachineTimerForAlarm
+        {
+            get { return Fields.MachineTimerForAlarm[this]; }
+            set { Fields.MachineTimerForAlarm[this] = value; }
+        }
+
+        [DisplayName("Machine Isactive"), Expression("jMachine.[isactive]")]
+        public Boolean? MachineIsactive
+        {
+            get { return Fields.MachineIsactive[this]; }
+            set { Fields.MachineIsactive[this] = value; }
+        }
+
+        [DisplayName("Machine Is Show Statistics"), Expression("jMachine.[IsShowStatistics]")]
+        public Boolean? MachineIsShowStatistics
+        {
+            get { return Fields.MachineIsShowStatistics[this]; }
+            set { Fields.MachineIsShowStatistics[this] = value; }
+        }
+
+        [DisplayName("Machine Record Added Source"), Expression("jMachine.[RecordAddedSource]")]
+        public String MachineRecordAddedSource
+        {
+            get { return Fields.MachineRecordAddedSource[this]; }
+            set { Fields.MachineRecordAddedSource[this] = value; }
+        }
+
+        [DisplayName("Machine Is Real Time"), Expression("jMachine.[IsRealTime]")]
+        public Boolean? MachineIsRealTime
+        {
+            get { return Fields.MachineIsRealTime[this]; }
+            set { Fields.MachineIsRealTime[this] = value; }
+        }
+
+        [DisplayName("Machine Table Id"), Expression("jMachine.[TableId]")]
+        public Int32? MachineTableId
+        {
+            get { return Fields.MachineTableId[this]; }
+            set { Fields.MachineTableId[this] = value; }
+        }
+
+        [DisplayName("Machine Table Name"), Expression("jMachine.[TableName]")]
+        public String MachineTableName
+        {
+            get { return Fields.MachineTableName[this]; }
+            set { Fields.MachineTableName[this] = value; }
+        }
+
+        [DisplayName("List Display Background Color"), Expression("jListDisplay.[BackgroundColor]")]
+        public String ListDisplayBackgroundColor
+        {
+            get { return Fields.ListDisplayBackgroundColor[this]; }
+            set { Fields.ListDisplayBackgroundColor[this] = value; }
+        }
+
+        [DisplayName("List Display Border Style"), Expression("jListDisplay.[BorderStyle]")]
+        public Int32? ListDisplayBorderStyle
+        {
+            get { return Fields.ListDisplayBorderStyle[this]; }
+            set { Fields.ListDisplayBorderStyle[this] = value; }
+        }
+
+        [DisplayName("List Display Checkbox"), Expression("jListDisplay.[Checkbox]")]
+        public Boolean? ListDisplayCheckbox
+        {
+            get { return Fields.ListDisplayCheckbox[this]; }
+            set { Fields.ListDisplayCheckbox[this] = value; }
+        }
+
+        [DisplayName("List Display Font"), Expression("jListDisplay.[Font]")]
+        public String ListDisplayFont
+        {
+            get { return Fields.ListDisplayFont[this]; }
+            set { Fields.ListDisplayFont[this] = value; }
+        }
+
+        [DisplayName("List Display Font Color"), Expression("jListDisplay.[FontColor]")]
+        public String ListDisplayFontColor
+        {
+            get { return Fields.ListDisplayFontColor[this]; }
+            set { Fields.ListDisplayFontColor[this] = value; }
+        }
+
+        [DisplayName("List Display Font Size"), Expression("jListDisplay.[FontSize]")]
+        public Int32? ListDisplayFontSize
+        {
+            get { return Fields.ListDisplayFontSize[this]; }
+            set { Fields.ListDisplayFontSize[this] = value; }
+        }
+
+        [DisplayName("List Display Full Row Select"), Expression("jListDisplay.[FullRowSelect]")]
+        public Boolean? ListDisplayFullRowSelect
+        {
+            get { return Fields.ListDisplayFullRowSelect[this]; }
+            set { Fields.ListDisplayFullRowSelect[this] = value; }
+        }
+
+        [DisplayName("List Display Gridlines"), Expression("jListDisplay.[Gridlines]")]
+        public Boolean? ListDisplayGridlines
+        {
+            get { return Fields.ListDisplayGridlines[this]; }
+            set { Fields.ListDisplayGridlines[this] = value; }
+        }
+
+        [DisplayName("List Display Use Wait Cursor On Click"), Expression("jListDisplay.[UseWaitCursorOnClick]")]
+        public Boolean? ListDisplayUseWaitCursorOnClick
+        {
+            get { return Fields.ListDisplayUseWaitCursorOnClick[this]; }
+            set { Fields.ListDisplayUseWaitCursorOnClick[this] = value; }
+        }
+
+        [DisplayName("List Display Activation"), Expression("jListDisplay.[Activation]")]
+        public Int32? ListDisplayActivation
+        {
+            get { return Fields.ListDisplayActivation[this]; }
+            set { Fields.ListDisplayActivation[this] = value; }
+        }
+
+        [DisplayName("List Display Alignment"), Expression("jListDisplay.[Alignment]")]
+        public Int32? ListDisplayAlignment
+        {
+            get { return Fields.ListDisplayAlignment[this]; }
+            set { Fields.ListDisplayAlignment[this] = value; }
+        }
+
+        [DisplayName("List Display Sorting Type"), Expression("jListDisplay.[SortingType]")]
+        public Int32? ListDisplaySortingType
+        {
+            get { return Fields.ListDisplaySortingType[this]; }
+            set { Fields.ListDisplaySortingType[this] = value; }
+        }
+
+        [DisplayName("List Display Sort Asc Desc"), Expression("jListDisplay.[SortAscDesc]")]
+        public Boolean? ListDisplaySortAscDesc
+        {
+            get { return Fields.ListDisplaySortAscDesc[this]; }
+            set { Fields.ListDisplaySortAscDesc[this] = value; }
+        }
+
+        [DisplayName("List Display Multi Select"), Expression("jListDisplay.[MultiSelect]")]
+        public Boolean? ListDisplayMultiSelect
+        {
+            get { return Fields.ListDisplayMultiSelect[this]; }
+            set { Fields.ListDisplayMultiSelect[this] = value; }
+        }
+
+        [DisplayName("List Display Auto Resize"), Expression("jListDisplay.[AutoResize]")]
+        public Boolean? ListDisplayAutoResize
+        {
+            get { return Fields.ListDisplayAutoResize[this]; }
+            set { Fields.ListDisplayAutoResize[this] = value; }
+        }
+
+        [DisplayName("List Display Collapsible"), Expression("jListDisplay.[Collapsible]")]
+        public Boolean? ListDisplayCollapsible
+        {
+            get { return Fields.ListDisplayCollapsible[this]; }
+            set { Fields.ListDisplayCollapsible[this] = value; }
+        }
+
+        [DisplayName("List Display View Id"), Expression("jListDisplay.[ViewId]")]
+        public Int32? ListDisplayViewId
+        {
+            get { return Fields.ListDisplayViewId[this]; }
+            set { Fields.ListDisplayViewId[this] = value; }
+        }
+
+        [DisplayName("List Display List Display Name"), Expression("jListDisplay.[ListDisplayName]")]
+        public String ListDisplayListDisplayName
+        {
+            get { return Fields.ListDisplayListDisplayName[this]; }
+            set { Fields.ListDisplayListDisplayName[this] = value; }
+        }
+
+        [DisplayName("Form Display Form Display Name"), Expression("jFormDisplay.[FormDisplayName]")]
+        public String FormDisplayFormDisplayName
+        {
+            get { return Fields.FormDisplayFormDisplayName[this]; }
+            set { Fields.FormDisplayFormDisplayName[this] = value; }
+        }
+
+        [DisplayName("Form Display Background Color"), Expression("jFormDisplay.[BackgroundColor]")]
+        public String FormDisplayBackgroundColor
+        {
+            get { return Fields.FormDisplayBackgroundColor[this]; }
+            set { Fields.FormDisplayBackgroundColor[this] = value; }
+        }
+
+        [DisplayName("Form Display Border Style"), Expression("jFormDisplay.[BorderStyle]")]
+        public Int32? FormDisplayBorderStyle
+        {
+            get { return Fields.FormDisplayBorderStyle[this]; }
+            set { Fields.FormDisplayBorderStyle[this] = value; }
+        }
+
+        [DisplayName("Form Display Is Checkbox"), Expression("jFormDisplay.[IsCheckbox]")]
+        public Boolean? FormDisplayIsCheckbox
+        {
+            get { return Fields.FormDisplayIsCheckbox[this]; }
+            set { Fields.FormDisplayIsCheckbox[this] = value; }
+        }
+
+        [DisplayName("Form Display Font"), Expression("jFormDisplay.[Font]")]
+        public String FormDisplayFont
+        {
+            get { return Fields.FormDisplayFont[this]; }
+            set { Fields.FormDisplayFont[this] = value; }
+        }
+
+        [DisplayName("Form Display Font Color Selected"), Expression("jFormDisplay.[FontColorSelected]")]
+        public String FormDisplayFontColorSelected
+        {
+            get { return Fields.FormDisplayFontColorSelected[this]; }
+            set { Fields.FormDisplayFontColorSelected[this] = value; }
+        }
+
+        [DisplayName("Form Display Font Color Unselected"), Expression("jFormDisplay.[FontColorUnselected]")]
+        public String FormDisplayFontColorUnselected
+        {
+            get { return Fields.FormDisplayFontColorUnselected[this]; }
+            set { Fields.FormDisplayFontColorUnselected[this] = value; }
+        }
+
+        [DisplayName("Form Display Activation"), Expression("jFormDisplay.[Activation]")]
+        public Int32? FormDisplayActivation
+        {
+            get { return Fields.FormDisplayActivation[this]; }
+            set { Fields.FormDisplayActivation[this] = value; }
+        }
+
+        [DisplayName("Form Display Alignment"), Expression("jFormDisplay.[Alignment]")]
+        public Int32? FormDisplayAlignment
+        {
+            get { return Fields.FormDisplayAlignment[this]; }
+            set { Fields.FormDisplayAlignment[this] = value; }
+        }
+
+        [DisplayName("Form Display Is Tooltip"), Expression("jFormDisplay.[IsTooltip]")]
+        public Boolean? FormDisplayIsTooltip
+        {
+            get { return Fields.FormDisplayIsTooltip[this]; }
+            set { Fields.FormDisplayIsTooltip[this] = value; }
+        }
+
+        [DisplayName("Form Display Is Horizontal Scroll Bar"), Expression("jFormDisplay.[IsHorizontalScrollBar]")]
+        public Boolean? FormDisplayIsHorizontalScrollBar
+        {
+            get { return Fields.FormDisplayIsHorizontalScrollBar[this]; }
+            set { Fields.FormDisplayIsHorizontalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Form Display Is Vertical Scroll Bar"), Expression("jFormDisplay.[IsVerticalScrollBar]")]
+        public Boolean? FormDisplayIsVerticalScrollBar
+        {
+            get { return Fields.FormDisplayIsVerticalScrollBar[this]; }
+            set { Fields.FormDisplayIsVerticalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Form Display Is Collapsible"), Expression("jFormDisplay.[IsCollapsible]")]
+        public Boolean? FormDisplayIsCollapsible
+        {
+            get { return Fields.FormDisplayIsCollapsible[this]; }
+            set { Fields.FormDisplayIsCollapsible[this] = value; }
+        }
+
+        [DisplayName("Button Display Button Display Name"), Expression("jButtonDisplay.[ButtonDisplayName]")]
+        public String ButtonDisplayButtonDisplayName
+        {
+            get { return Fields.ButtonDisplayButtonDisplayName[this]; }
+            set { Fields.ButtonDisplayButtonDisplayName[this] = value; }
+        }
+
+        [DisplayName("Button Display Background Color"), Expression("jButtonDisplay.[BackgroundColor]")]
+        public String ButtonDisplayBackgroundColor
+        {
+            get { return Fields.ButtonDisplayBackgroundColor[this]; }
+            set { Fields.ButtonDisplayBackgroundColor[this] = value; }
+        }
+
+        [DisplayName("Button Display Border Style"), Expression("jButtonDisplay.[BorderStyle]")]
+        public Int32? ButtonDisplayBorderStyle
+        {
+            get { return Fields.ButtonDisplayBorderStyle[this]; }
+            set { Fields.ButtonDisplayBorderStyle[this] = value; }
+        }
+
+        [DisplayName("Button Display Font"), Expression("jButtonDisplay.[Font]")]
+        public String ButtonDisplayFont
+        {
+            get { return Fields.ButtonDisplayFont[this]; }
+            set { Fields.ButtonDisplayFont[this] = value; }
+        }
+
+        [DisplayName("Button Display Font Color Selected"), Expression("jButtonDisplay.[FontColorSelected]")]
+        public String ButtonDisplayFontColorSelected
+        {
+            get { return Fields.ButtonDisplayFontColorSelected[this]; }
+            set { Fields.ButtonDisplayFontColorSelected[this] = value; }
+        }
+
+        [DisplayName("Button Display Font Color Unselected"), Expression("jButtonDisplay.[FontColorUnselected]")]
+        public String ButtonDisplayFontColorUnselected
+        {
+            get { return Fields.ButtonDisplayFontColorUnselected[this]; }
+            set { Fields.ButtonDisplayFontColorUnselected[this] = value; }
+        }
+
+        [DisplayName("Button Display Activation"), Expression("jButtonDisplay.[Activation]")]
+        public Int32? ButtonDisplayActivation
+        {
+            get { return Fields.ButtonDisplayActivation[this]; }
+            set { Fields.ButtonDisplayActivation[this] = value; }
+        }
+
+        [DisplayName("Button Display Alignment"), Expression("jButtonDisplay.[Alignment]")]
+        public Int32? ButtonDisplayAlignment
+        {
+            get { return Fields.ButtonDisplayAlignment[this]; }
+            set { Fields.ButtonDisplayAlignment[this] = value; }
+        }
+
+        [DisplayName("Button Display Is Tooltip"), Expression("jButtonDisplay.[IsTooltip]")]
+        public Boolean? ButtonDisplayIsTooltip
+        {
+            get { return Fields.ButtonDisplayIsTooltip[this]; }
+            set { Fields.ButtonDisplayIsTooltip[this] = value; }
+        }
+
+        [DisplayName("Button Display Is Horizontal Scroll Bar"), Expression("jButtonDisplay.[IsHorizontalScrollBar]")]
+        public Boolean? ButtonDisplayIsHorizontalScrollBar
+        {
+            get { return Fields.ButtonDisplayIsHorizontalScrollBar[this]; }
+            set { Fields.ButtonDisplayIsHorizontalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Button Display Is Vertical Scroll Bar"), Expression("jButtonDisplay.[IsVerticalScrollBar]")]
+        public Boolean? ButtonDisplayIsVerticalScrollBar
+        {
+            get { return Fields.ButtonDisplayIsVerticalScrollBar[this]; }
+            set { Fields.ButtonDisplayIsVerticalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Button Display Is Collapsible"), Expression("jButtonDisplay.[IsCollapsible]")]
+        public Boolean? ButtonDisplayIsCollapsible
+        {
+            get { return Fields.ButtonDisplayIsCollapsible[this]; }
+            set { Fields.ButtonDisplayIsCollapsible[this] = value; }
+        }
+
+        [DisplayName("Realtime Parameter Display Realtime Parameter Display Name"), Expression("jRealtimeParameterDisplay.[RealtimeParameterDisplayName]")]
+        public String RealtimeParameterDisplayRealtimeParameterDisplayName
+        {
+            get { return Fields.RealtimeParameterDisplayRealtimeParameterDisplayName[this]; }
+            set { Fields.RealtimeParameterDisplayRealtimeParameterDisplayName[this] = value; }
+        }
+
+        [DisplayName("Realtime Parameter Display Background Color"), Expression("jRealtimeParameterDisplay.[BackgroundColor]")]
+        public String RealtimeParameterDisplayBackgroundColor
+        {
+            get { return Fields.RealtimeParameterDisplayBackgroundColor[this]; }
+            set { Fields.RealtimeParameterDisplayBackgroundColor[this] = value; }
+        }
+
+        [DisplayName("Realtime Parameter Display Border Style"), Expression("jRealtimeParameterDisplay.[BorderStyle]")]
+        public Int32? RealtimeParameterDisplayBorderStyle
+        {
+            get { return Fields.RealtimeParameterDisplayBorderStyle[this]; }
+            set { Fields.RealtimeParameterDisplayBorderStyle[this] = value; }
+        }
+
+        [DisplayName("Realtime Parameter Display Font"), Expression("jRealtimeParameterDisplay.[Font]")]
+        public String RealtimeParameterDisplayFont
+        {
+            get { return Fields.RealtimeParameterDisplayFont[this]; }
+            set { Fields.RealtimeParameterDisplayFont[this] = value; }
+        }
+
+        [DisplayName("Realtime Parameter Display Font Color"), Expression("jRealtimeParameterDisplay.[FontColor]")]
+        public String RealtimeParameterDisplayFontColor
+        {
+            get { return Fields.RealtimeParameterDisplayFontColor[this]; }
+            set { Fields.RealtimeParameterDisplayFontColor[this] = value; }
+        }
+
+        [DisplayName("Realtime Parameter Display Alignment"), Expression("jRealtimeParameterDisplay.[Alignment]")]
+        public Int32? RealtimeParameterDisplayAlignment
+        {
+            get { return Fields.RealtimeParameterDisplayAlignment[this]; }
+            set { Fields.RealtimeParameterDisplayAlignment[this] = value; }
+        }
+
+        [DisplayName("Realtime Parameter Display Is Tooltip"), Expression("jRealtimeParameterDisplay.[IsTooltip]")]
+        public Boolean? RealtimeParameterDisplayIsTooltip
+        {
+            get { return Fields.RealtimeParameterDisplayIsTooltip[this]; }
+            set { Fields.RealtimeParameterDisplayIsTooltip[this] = value; }
+        }
+
+        [DisplayName("Realtime Parameter Display Is Horizontal Scroll Bar"), Expression("jRealtimeParameterDisplay.[IsHorizontalScrollBar]")]
+        public Boolean? RealtimeParameterDisplayIsHorizontalScrollBar
+        {
+            get { return Fields.RealtimeParameterDisplayIsHorizontalScrollBar[this]; }
+            set { Fields.RealtimeParameterDisplayIsHorizontalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Realtime Parameter Display Is Vertical Scroll Bar"), Expression("jRealtimeParameterDisplay.[IsVerticalScrollBar]")]
+        public Boolean? RealtimeParameterDisplayIsVerticalScrollBar
+        {
+            get { return Fields.RealtimeParameterDisplayIsVerticalScrollBar[this]; }
+            set { Fields.RealtimeParameterDisplayIsVerticalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Realtime Parameter Display Is Collapsible"), Expression("jRealtimeParameterDisplay.[IsCollapsible]")]
+        public Boolean? RealtimeParameterDisplayIsCollapsible
+        {
+            get { return Fields.RealtimeParameterDisplayIsCollapsible[this]; }
+            set { Fields.RealtimeParameterDisplayIsCollapsible[this] = value; }
+        }
+
+        [DisplayName("Line Chart Display Line Chart Display Name"), Expression("jLineChartDisplay.[LineChartDisplayName]")]
+        public String LineChartDisplayLineChartDisplayName
+        {
+            get { return Fields.LineChartDisplayLineChartDisplayName[this]; }
+            set { Fields.LineChartDisplayLineChartDisplayName[this] = value; }
+        }
+
+        [DisplayName("Line Chart Display Background Color"), Expression("jLineChartDisplay.[BackgroundColor]")]
+        public String LineChartDisplayBackgroundColor
+        {
+            get { return Fields.LineChartDisplayBackgroundColor[this]; }
+            set { Fields.LineChartDisplayBackgroundColor[this] = value; }
+        }
+
+        [DisplayName("Line Chart Display Border Style"), Expression("jLineChartDisplay.[BorderStyle]")]
+        public Int32? LineChartDisplayBorderStyle
+        {
+            get { return Fields.LineChartDisplayBorderStyle[this]; }
+            set { Fields.LineChartDisplayBorderStyle[this] = value; }
+        }
+
+        [DisplayName("Line Chart Display Font"), Expression("jLineChartDisplay.[Font]")]
+        public String LineChartDisplayFont
+        {
+            get { return Fields.LineChartDisplayFont[this]; }
+            set { Fields.LineChartDisplayFont[this] = value; }
+        }
+
+        [DisplayName("Line Chart Display Font Color"), Expression("jLineChartDisplay.[FontColor]")]
+        public String LineChartDisplayFontColor
+        {
+            get { return Fields.LineChartDisplayFontColor[this]; }
+            set { Fields.LineChartDisplayFontColor[this] = value; }
+        }
+
+        [DisplayName("Line Chart Display Alignment"), Expression("jLineChartDisplay.[Alignment]")]
+        public Int32? LineChartDisplayAlignment
+        {
+            get { return Fields.LineChartDisplayAlignment[this]; }
+            set { Fields.LineChartDisplayAlignment[this] = value; }
+        }
+
+        [DisplayName("Line Chart Display Is Tooltip"), Expression("jLineChartDisplay.[IsTooltip]")]
+        public Boolean? LineChartDisplayIsTooltip
+        {
+            get { return Fields.LineChartDisplayIsTooltip[this]; }
+            set { Fields.LineChartDisplayIsTooltip[this] = value; }
+        }
+
+        [DisplayName("Line Chart Display Is Horizontal Scroll Bar"), Expression("jLineChartDisplay.[IsHorizontalScrollBar]")]
+        public Boolean? LineChartDisplayIsHorizontalScrollBar
+        {
+            get { return Fields.LineChartDisplayIsHorizontalScrollBar[this]; }
+            set { Fields.LineChartDisplayIsHorizontalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Line Chart Display Is Vertical Scroll Bar"), Expression("jLineChartDisplay.[IsVerticalScrollBar]")]
+        public Boolean? LineChartDisplayIsVerticalScrollBar
+        {
+            get { return Fields.LineChartDisplayIsVerticalScrollBar[this]; }
+            set { Fields.LineChartDisplayIsVerticalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Line Chart Display Is Collapsible"), Expression("jLineChartDisplay.[IsCollapsible]")]
+        public Boolean? LineChartDisplayIsCollapsible
+        {
+            get { return Fields.LineChartDisplayIsCollapsible[this]; }
+            set { Fields.LineChartDisplayIsCollapsible[this] = value; }
+        }
+
+        [DisplayName("Line Chart Display Is Legends"), Expression("jLineChartDisplay.[IsLegends]")]
+        public Boolean? LineChartDisplayIsLegends
+        {
+            get { return Fields.LineChartDisplayIsLegends[this]; }
+            set { Fields.LineChartDisplayIsLegends[this] = value; }
+        }
+
+        [DisplayName("Line Chart Display Is Gridlines"), Expression("jLineChartDisplay.[IsGridlines]")]
+        public Boolean? LineChartDisplayIsGridlines
+        {
+            get { return Fields.LineChartDisplayIsGridlines[this]; }
+            set { Fields.LineChartDisplayIsGridlines[this] = value; }
+        }
+
+        [DisplayName("Line Chart Display Gridline Color"), Expression("jLineChartDisplay.[GridlineColor]")]
+        public String LineChartDisplayGridlineColor
+        {
+            get { return Fields.LineChartDisplayGridlineColor[this]; }
+            set { Fields.LineChartDisplayGridlineColor[this] = value; }
+        }
+
+        [DisplayName("Line Chart Display Is Realtime"), Expression("jLineChartDisplay.[IsRealtime]")]
+        public Boolean? LineChartDisplayIsRealtime
+        {
+            get { return Fields.LineChartDisplayIsRealtime[this]; }
+            set { Fields.LineChartDisplayIsRealtime[this] = value; }
+        }
+
+        [DisplayName("Line Chart Display Axis Color"), Expression("jLineChartDisplay.[AxisColor]")]
+        public String LineChartDisplayAxisColor
+        {
+            get { return Fields.LineChartDisplayAxisColor[this]; }
+            set { Fields.LineChartDisplayAxisColor[this] = value; }
+        }
+
+        [DisplayName("Pie Chart Display Pie Chart Display Name"), Expression("jPieChartDisplay.[PieChartDisplayName]")]
+        public String PieChartDisplayPieChartDisplayName
+        {
+            get { return Fields.PieChartDisplayPieChartDisplayName[this]; }
+            set { Fields.PieChartDisplayPieChartDisplayName[this] = value; }
+        }
+
+        [DisplayName("Pie Chart Display Background Color"), Expression("jPieChartDisplay.[BackgroundColor]")]
+        public String PieChartDisplayBackgroundColor
+        {
+            get { return Fields.PieChartDisplayBackgroundColor[this]; }
+            set { Fields.PieChartDisplayBackgroundColor[this] = value; }
+        }
+
+        [DisplayName("Pie Chart Display Border Style"), Expression("jPieChartDisplay.[BorderStyle]")]
+        public Int32? PieChartDisplayBorderStyle
+        {
+            get { return Fields.PieChartDisplayBorderStyle[this]; }
+            set { Fields.PieChartDisplayBorderStyle[this] = value; }
+        }
+
+        [DisplayName("Pie Chart Display Font"), Expression("jPieChartDisplay.[Font]")]
+        public String PieChartDisplayFont
+        {
+            get { return Fields.PieChartDisplayFont[this]; }
+            set { Fields.PieChartDisplayFont[this] = value; }
+        }
+
+        [DisplayName("Pie Chart Display Font Color"), Expression("jPieChartDisplay.[FontColor]")]
+        public String PieChartDisplayFontColor
+        {
+            get { return Fields.PieChartDisplayFontColor[this]; }
+            set { Fields.PieChartDisplayFontColor[this] = value; }
+        }
+
+        [DisplayName("Pie Chart Display Is Legends"), Expression("jPieChartDisplay.[IsLegends]")]
+        public Boolean? PieChartDisplayIsLegends
+        {
+            get { return Fields.PieChartDisplayIsLegends[this]; }
+            set { Fields.PieChartDisplayIsLegends[this] = value; }
+        }
+
+        [DisplayName("Pie Chart Display Legend Font Size"), Expression("jPieChartDisplay.[LegendFontSize]")]
+        public Int32? PieChartDisplayLegendFontSize
+        {
+            get { return Fields.PieChartDisplayLegendFontSize[this]; }
+            set { Fields.PieChartDisplayLegendFontSize[this] = value; }
+        }
+
+        [DisplayName("Pie Chart Display Is Show Values As Percentage"), Expression("jPieChartDisplay.[IsShowValuesAsPercentage]")]
+        public Boolean? PieChartDisplayIsShowValuesAsPercentage
+        {
+            get { return Fields.PieChartDisplayIsShowValuesAsPercentage[this]; }
+            set { Fields.PieChartDisplayIsShowValuesAsPercentage[this] = value; }
+        }
+
+        [DisplayName("Pie Chart Display Is Show Total"), Expression("jPieChartDisplay.[isShowTotal]")]
+        public Boolean? PieChartDisplayIsShowTotal
+        {
+            get { return Fields.PieChartDisplayIsShowTotal[this]; }
+            set { Fields.PieChartDisplayIsShowTotal[this] = value; }
+        }
+
+        [DisplayName("Pie Chart Display Alignment"), Expression("jPieChartDisplay.[Alignment]")]
+        public Int32? PieChartDisplayAlignment
+        {
+            get { return Fields.PieChartDisplayAlignment[this]; }
+            set { Fields.PieChartDisplayAlignment[this] = value; }
+        }
+
+        [DisplayName("Pie Chart Display Is Tooltip"), Expression("jPieChartDisplay.[IsTooltip]")]
+        public Boolean? PieChartDisplayIsTooltip
+        {
+            get { return Fields.PieChartDisplayIsTooltip[this]; }
+            set { Fields.PieChartDisplayIsTooltip[this] = value; }
+        }
+
+        [DisplayName("Pie Chart Display Is Horizontal Scroll Bar"), Expression("jPieChartDisplay.[IsHorizontalScrollBar]")]
+        public Boolean? PieChartDisplayIsHorizontalScrollBar
+        {
+            get { return Fields.PieChartDisplayIsHorizontalScrollBar[this]; }
+            set { Fields.PieChartDisplayIsHorizontalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Pie Chart Display Is Vertical Scroll Bar"), Expression("jPieChartDisplay.[IsVerticalScrollBar]")]
+        public Boolean? PieChartDisplayIsVerticalScrollBar
+        {
+            get { return Fields.PieChartDisplayIsVerticalScrollBar[this]; }
+            set { Fields.PieChartDisplayIsVerticalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Pie Chart Display Is Realtime"), Expression("jPieChartDisplay.[IsRealtime]")]
+        public Boolean? PieChartDisplayIsRealtime
+        {
+            get { return Fields.PieChartDisplayIsRealtime[this]; }
+            set { Fields.PieChartDisplayIsRealtime[this] = value; }
+        }
+
+        [DisplayName("Tree Display Tree Display Name"), Expression("jTreeDisplay.[TreeDisplayName]")]
+        public String TreeDisplayTreeDisplayName
+        {
+            get { return Fields.TreeDisplayTreeDisplayName[this]; }
+            set { Fields.TreeDisplayTreeDisplayName[this] = value; }
+        }
+
+        [DisplayName("Tree Display Background Color"), Expression("jTreeDisplay.[BackgroundColor]")]
+        public String TreeDisplayBackgroundColor
+        {
+            get { return Fields.TreeDisplayBackgroundColor[this]; }
+            set { Fields.TreeDisplayBackgroundColor[this] = value; }
+        }
+
+        [DisplayName("Tree Display Border Style"), Expression("jTreeDisplay.[BorderStyle]")]
+        public Int32? TreeDisplayBorderStyle
+        {
+            get { return Fields.TreeDisplayBorderStyle[this]; }
+            set { Fields.TreeDisplayBorderStyle[this] = value; }
+        }
+
+        [DisplayName("Tree Display Font"), Expression("jTreeDisplay.[Font]")]
+        public String TreeDisplayFont
+        {
+            get { return Fields.TreeDisplayFont[this]; }
+            set { Fields.TreeDisplayFont[this] = value; }
+        }
+
+        [DisplayName("Tree Display Font Color"), Expression("jTreeDisplay.[FontColor]")]
+        public String TreeDisplayFontColor
+        {
+            get { return Fields.TreeDisplayFontColor[this]; }
+            set { Fields.TreeDisplayFontColor[this] = value; }
+        }
+
+        [DisplayName("Tree Display Is Full Row Select"), Expression("jTreeDisplay.[IsFullRowSelect]")]
+        public Boolean? TreeDisplayIsFullRowSelect
+        {
+            get { return Fields.TreeDisplayIsFullRowSelect[this]; }
+            set { Fields.TreeDisplayIsFullRowSelect[this] = value; }
+        }
+
+        [DisplayName("Tree Display Line Color"), Expression("jTreeDisplay.[LineColor]")]
+        public String TreeDisplayLineColor
+        {
+            get { return Fields.TreeDisplayLineColor[this]; }
+            set { Fields.TreeDisplayLineColor[this] = value; }
+        }
+
+        [DisplayName("Tree Display Default View"), Expression("jTreeDisplay.[DefaultView]")]
+        public Int32? TreeDisplayDefaultView
+        {
+            get { return Fields.TreeDisplayDefaultView[this]; }
+            set { Fields.TreeDisplayDefaultView[this] = value; }
+        }
+
+        [DisplayName("Tree Display Alignment"), Expression("jTreeDisplay.[Alignment]")]
+        public Int32? TreeDisplayAlignment
+        {
+            get { return Fields.TreeDisplayAlignment[this]; }
+            set { Fields.TreeDisplayAlignment[this] = value; }
+        }
+
+        [DisplayName("Tree Display Is Tooltip"), Expression("jTreeDisplay.[IsTooltip]")]
+        public Boolean? TreeDisplayIsTooltip
+        {
+            get { return Fields.TreeDisplayIsTooltip[this]; }
+            set { Fields.TreeDisplayIsTooltip[this] = value; }
+        }
+
+        [DisplayName("Tree Display Is Horizontal Scroll Bar"), Expression("jTreeDisplay.[IsHorizontalScrollBar]")]
+        public Boolean? TreeDisplayIsHorizontalScrollBar
+        {
+            get { return Fields.TreeDisplayIsHorizontalScrollBar[this]; }
+            set { Fields.TreeDisplayIsHorizontalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Tree Display Is Vertical Scroll Bar"), Expression("jTreeDisplay.[IsVerticalScrollBar]")]
+        public Boolean? TreeDisplayIsVerticalScrollBar
+        {
+            get { return Fields.TreeDisplayIsVerticalScrollBar[this]; }
+            set { Fields.TreeDisplayIsVerticalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Tree Display Is Realtime"), Expression("jTreeDisplay.[IsRealtime]")]
+        public Boolean? TreeDisplayIsRealtime
+        {
+            get { return Fields.TreeDisplayIsRealtime[this]; }
+            set { Fields.TreeDisplayIsRealtime[this] = value; }
+        }
+
+        [DisplayName("Attachment Display Attachment Display Name"), Expression("jAttachmentDisplay.[AttachmentDisplayName]")]
+        public String AttachmentDisplayAttachmentDisplayName
+        {
+            get { return Fields.AttachmentDisplayAttachmentDisplayName[this]; }
+            set { Fields.AttachmentDisplayAttachmentDisplayName[this] = value; }
+        }
+
+        [DisplayName("Attachment Display Background Color"), Expression("jAttachmentDisplay.[BackgroundColor]")]
+        public String AttachmentDisplayBackgroundColor
+        {
+            get { return Fields.AttachmentDisplayBackgroundColor[this]; }
+            set { Fields.AttachmentDisplayBackgroundColor[this] = value; }
+        }
+
+        [DisplayName("Attachment Display Border Style"), Expression("jAttachmentDisplay.[BorderStyle]")]
+        public Int32? AttachmentDisplayBorderStyle
+        {
+            get { return Fields.AttachmentDisplayBorderStyle[this]; }
+            set { Fields.AttachmentDisplayBorderStyle[this] = value; }
+        }
+
+        [DisplayName("Attachment Display Is Checkbox"), Expression("jAttachmentDisplay.[IsCheckbox]")]
+        public Boolean? AttachmentDisplayIsCheckbox
+        {
+            get { return Fields.AttachmentDisplayIsCheckbox[this]; }
+            set { Fields.AttachmentDisplayIsCheckbox[this] = value; }
+        }
+
+        [DisplayName("Attachment Display Font"), Expression("jAttachmentDisplay.[Font]")]
+        public String AttachmentDisplayFont
+        {
+            get { return Fields.AttachmentDisplayFont[this]; }
+            set { Fields.AttachmentDisplayFont[this] = value; }
+        }
+
+        [DisplayName("Attachment Display Font Color Selected"), Expression("jAttachmentDisplay.[FontColorSelected]")]
+        public String AttachmentDisplayFontColorSelected
+        {
+            get { return Fields.AttachmentDisplayFontColorSelected[this]; }
+            set { Fields.AttachmentDisplayFontColorSelected[this] = value; }
+        }
+
+        [DisplayName("Attachment Display Font Color Unselected"), Expression("jAttachmentDisplay.[FontColorUnselected]")]
+        public String AttachmentDisplayFontColorUnselected
+        {
+            get { return Fields.AttachmentDisplayFontColorUnselected[this]; }
+            set { Fields.AttachmentDisplayFontColorUnselected[this] = value; }
+        }
+
+        [DisplayName("Attachment Display Activation"), Expression("jAttachmentDisplay.[Activation]")]
+        public Int32? AttachmentDisplayActivation
+        {
+            get { return Fields.AttachmentDisplayActivation[this]; }
+            set { Fields.AttachmentDisplayActivation[this] = value; }
+        }
+
+        [DisplayName("Attachment Display Is Open In New Window"), Expression("jAttachmentDisplay.[IsOpenInNewWindow]")]
+        public Boolean? AttachmentDisplayIsOpenInNewWindow
+        {
+            get { return Fields.AttachmentDisplayIsOpenInNewWindow[this]; }
+            set { Fields.AttachmentDisplayIsOpenInNewWindow[this] = value; }
+        }
+
+        [DisplayName("Attachment Display Is Tooltip"), Expression("jAttachmentDisplay.[IsTooltip]")]
+        public Boolean? AttachmentDisplayIsTooltip
+        {
+            get { return Fields.AttachmentDisplayIsTooltip[this]; }
+            set { Fields.AttachmentDisplayIsTooltip[this] = value; }
+        }
+
+        [DisplayName("Attachment Display Is Horizontal Scroll Bar"), Expression("jAttachmentDisplay.[IsHorizontalScrollBar]")]
+        public Boolean? AttachmentDisplayIsHorizontalScrollBar
+        {
+            get { return Fields.AttachmentDisplayIsHorizontalScrollBar[this]; }
+            set { Fields.AttachmentDisplayIsHorizontalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Attachment Display Is Vertical Scroll Bar"), Expression("jAttachmentDisplay.[IsVerticalScrollBar]")]
+        public Boolean? AttachmentDisplayIsVerticalScrollBar
+        {
+            get { return Fields.AttachmentDisplayIsVerticalScrollBar[this]; }
+            set { Fields.AttachmentDisplayIsVerticalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Attachment Display Alignment"), Expression("jAttachmentDisplay.[Alignment]")]
+        public Int32? AttachmentDisplayAlignment
+        {
+            get { return Fields.AttachmentDisplayAlignment[this]; }
+            set { Fields.AttachmentDisplayAlignment[this] = value; }
+        }
+
+        [DisplayName("Attachment Display Is Folder Browse"), Expression("jAttachmentDisplay.[IsFolderBrowse]")]
+        public Boolean? AttachmentDisplayIsFolderBrowse
+        {
+            get { return Fields.AttachmentDisplayIsFolderBrowse[this]; }
+            set { Fields.AttachmentDisplayIsFolderBrowse[this] = value; }
+        }
+
+        [DisplayName("Attachment Display Is Add Attachments"), Expression("jAttachmentDisplay.[IsAddAttachments]")]
+        public Boolean? AttachmentDisplayIsAddAttachments
+        {
+            get { return Fields.AttachmentDisplayIsAddAttachments[this]; }
+            set { Fields.AttachmentDisplayIsAddAttachments[this] = value; }
+        }
+
+        [DisplayName("Attachment Display Is Collapsible"), Expression("jAttachmentDisplay.[IsCollapsible]")]
+        public Boolean? AttachmentDisplayIsCollapsible
+        {
+            get { return Fields.AttachmentDisplayIsCollapsible[this]; }
+            set { Fields.AttachmentDisplayIsCollapsible[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Alarm Display Name"), Expression("jAlarmDisplay.[AlarmDisplayName]")]
+        public String AlarmDisplayAlarmDisplayName
+        {
+            get { return Fields.AlarmDisplayAlarmDisplayName[this]; }
+            set { Fields.AlarmDisplayAlarmDisplayName[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Background Color"), Expression("jAlarmDisplay.[BackgroundColor]")]
+        public String AlarmDisplayBackgroundColor
+        {
+            get { return Fields.AlarmDisplayBackgroundColor[this]; }
+            set { Fields.AlarmDisplayBackgroundColor[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Border Style"), Expression("jAlarmDisplay.[BorderStyle]")]
+        public Int32? AlarmDisplayBorderStyle
+        {
+            get { return Fields.AlarmDisplayBorderStyle[this]; }
+            set { Fields.AlarmDisplayBorderStyle[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Is Checkbox"), Expression("jAlarmDisplay.[IsCheckbox]")]
+        public Boolean? AlarmDisplayIsCheckbox
+        {
+            get { return Fields.AlarmDisplayIsCheckbox[this]; }
+            set { Fields.AlarmDisplayIsCheckbox[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Font"), Expression("jAlarmDisplay.[Font]")]
+        public String AlarmDisplayFont
+        {
+            get { return Fields.AlarmDisplayFont[this]; }
+            set { Fields.AlarmDisplayFont[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Font Color Selected"), Expression("jAlarmDisplay.[FontColorSelected]")]
+        public String AlarmDisplayFontColorSelected
+        {
+            get { return Fields.AlarmDisplayFontColorSelected[this]; }
+            set { Fields.AlarmDisplayFontColorSelected[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Font Color Unselected"), Expression("jAlarmDisplay.[FontColorUnselected]")]
+        public String AlarmDisplayFontColorUnselected
+        {
+            get { return Fields.AlarmDisplayFontColorUnselected[this]; }
+            set { Fields.AlarmDisplayFontColorUnselected[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Caution Color"), Expression("jAlarmDisplay.[CautionColor]")]
+        public String AlarmDisplayCautionColor
+        {
+            get { return Fields.AlarmDisplayCautionColor[this]; }
+            set { Fields.AlarmDisplayCautionColor[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Warning Color"), Expression("jAlarmDisplay.[WarningColor]")]
+        public String AlarmDisplayWarningColor
+        {
+            get { return Fields.AlarmDisplayWarningColor[this]; }
+            set { Fields.AlarmDisplayWarningColor[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Emergency Color"), Expression("jAlarmDisplay.[EmergencyColor]")]
+        public String AlarmDisplayEmergencyColor
+        {
+            get { return Fields.AlarmDisplayEmergencyColor[this]; }
+            set { Fields.AlarmDisplayEmergencyColor[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Activation"), Expression("jAlarmDisplay.[Activation]")]
+        public Int32? AlarmDisplayActivation
+        {
+            get { return Fields.AlarmDisplayActivation[this]; }
+            set { Fields.AlarmDisplayActivation[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Appearance"), Expression("jAlarmDisplay.[Appearance]")]
+        public Int32? AlarmDisplayAppearance
+        {
+            get { return Fields.AlarmDisplayAppearance[this]; }
+            set { Fields.AlarmDisplayAppearance[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Is Open In New Window"), Expression("jAlarmDisplay.[IsOpenInNewWindow]")]
+        public Boolean? AlarmDisplayIsOpenInNewWindow
+        {
+            get { return Fields.AlarmDisplayIsOpenInNewWindow[this]; }
+            set { Fields.AlarmDisplayIsOpenInNewWindow[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Is Tooltip"), Expression("jAlarmDisplay.[IsTooltip]")]
+        public Boolean? AlarmDisplayIsTooltip
+        {
+            get { return Fields.AlarmDisplayIsTooltip[this]; }
+            set { Fields.AlarmDisplayIsTooltip[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Is Horizontal Scroll Bar"), Expression("jAlarmDisplay.[IsHorizontalScrollBar]")]
+        public Boolean? AlarmDisplayIsHorizontalScrollBar
+        {
+            get { return Fields.AlarmDisplayIsHorizontalScrollBar[this]; }
+            set { Fields.AlarmDisplayIsHorizontalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Is Vertical Scroll Bar"), Expression("jAlarmDisplay.[IsVerticalScrollBar]")]
+        public Boolean? AlarmDisplayIsVerticalScrollBar
+        {
+            get { return Fields.AlarmDisplayIsVerticalScrollBar[this]; }
+            set { Fields.AlarmDisplayIsVerticalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Alignment"), Expression("jAlarmDisplay.[Alignment]")]
+        public Int32? AlarmDisplayAlignment
+        {
+            get { return Fields.AlarmDisplayAlignment[this]; }
+            set { Fields.AlarmDisplayAlignment[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Is Folder Browse"), Expression("jAlarmDisplay.[IsFolderBrowse]")]
+        public Boolean? AlarmDisplayIsFolderBrowse
+        {
+            get { return Fields.AlarmDisplayIsFolderBrowse[this]; }
+            set { Fields.AlarmDisplayIsFolderBrowse[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Is Add Attachments"), Expression("jAlarmDisplay.[IsAddAttachments]")]
+        public Boolean? AlarmDisplayIsAddAttachments
+        {
+            get { return Fields.AlarmDisplayIsAddAttachments[this]; }
+            set { Fields.AlarmDisplayIsAddAttachments[this] = value; }
+        }
+
+        [DisplayName("Alarm Display Is Collapsible"), Expression("jAlarmDisplay.[IsCollapsible]")]
+        public Boolean? AlarmDisplayIsCollapsible
+        {
+            get { return Fields.AlarmDisplayIsCollapsible[this]; }
+            set { Fields.AlarmDisplayIsCollapsible[this] = value; }
+        }
+
+        [DisplayName("Notification Display Notification Display Name"), Expression("jNotificationDisplay.[NotificationDisplayName]")]
+        public String NotificationDisplayNotificationDisplayName
+        {
+            get { return Fields.NotificationDisplayNotificationDisplayName[this]; }
+            set { Fields.NotificationDisplayNotificationDisplayName[this] = value; }
+        }
+
+        [DisplayName("Notification Display Background Color"), Expression("jNotificationDisplay.[BackgroundColor]")]
+        public String NotificationDisplayBackgroundColor
+        {
+            get { return Fields.NotificationDisplayBackgroundColor[this]; }
+            set { Fields.NotificationDisplayBackgroundColor[this] = value; }
+        }
+
+        [DisplayName("Notification Display Border Style"), Expression("jNotificationDisplay.[BorderStyle]")]
+        public Int32? NotificationDisplayBorderStyle
+        {
+            get { return Fields.NotificationDisplayBorderStyle[this]; }
+            set { Fields.NotificationDisplayBorderStyle[this] = value; }
+        }
+
+        [DisplayName("Notification Display Font"), Expression("jNotificationDisplay.[Font]")]
+        public String NotificationDisplayFont
+        {
+            get { return Fields.NotificationDisplayFont[this]; }
+            set { Fields.NotificationDisplayFont[this] = value; }
+        }
+
+        [DisplayName("Notification Display Font Color Selected"), Expression("jNotificationDisplay.[FontColorSelected]")]
+        public String NotificationDisplayFontColorSelected
+        {
+            get { return Fields.NotificationDisplayFontColorSelected[this]; }
+            set { Fields.NotificationDisplayFontColorSelected[this] = value; }
+        }
+
+        [DisplayName("Notification Display Font Color Unselected"), Expression("jNotificationDisplay.[FontColorUnselected]")]
+        public String NotificationDisplayFontColorUnselected
+        {
+            get { return Fields.NotificationDisplayFontColorUnselected[this]; }
+            set { Fields.NotificationDisplayFontColorUnselected[this] = value; }
+        }
+
+        [DisplayName("Notification Display Activation"), Expression("jNotificationDisplay.[Activation]")]
+        public Int32? NotificationDisplayActivation
+        {
+            get { return Fields.NotificationDisplayActivation[this]; }
+            set { Fields.NotificationDisplayActivation[this] = value; }
+        }
+
+        [DisplayName("Notification Display Is Open In New Window"), Expression("jNotificationDisplay.[IsOpenInNewWindow]")]
+        public Boolean? NotificationDisplayIsOpenInNewWindow
+        {
+            get { return Fields.NotificationDisplayIsOpenInNewWindow[this]; }
+            set { Fields.NotificationDisplayIsOpenInNewWindow[this] = value; }
+        }
+
+        [DisplayName("Notification Display Is Tooltip"), Expression("jNotificationDisplay.[IsTooltip]")]
+        public Boolean? NotificationDisplayIsTooltip
+        {
+            get { return Fields.NotificationDisplayIsTooltip[this]; }
+            set { Fields.NotificationDisplayIsTooltip[this] = value; }
+        }
+
+        [DisplayName("Notification Display Is Horizontal Scroll Bar"), Expression("jNotificationDisplay.[IsHorizontalScrollBar]")]
+        public Boolean? NotificationDisplayIsHorizontalScrollBar
+        {
+            get { return Fields.NotificationDisplayIsHorizontalScrollBar[this]; }
+            set { Fields.NotificationDisplayIsHorizontalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Notification Display Is Vertical Scroll Bar"), Expression("jNotificationDisplay.[IsVerticalScrollBar]")]
+        public Boolean? NotificationDisplayIsVerticalScrollBar
+        {
+            get { return Fields.NotificationDisplayIsVerticalScrollBar[this]; }
+            set { Fields.NotificationDisplayIsVerticalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Notification Display Alignment"), Expression("jNotificationDisplay.[Alignment]")]
+        public Int32? NotificationDisplayAlignment
+        {
+            get { return Fields.NotificationDisplayAlignment[this]; }
+            set { Fields.NotificationDisplayAlignment[this] = value; }
+        }
+
+        [DisplayName("Notification Display Is Folder Browse"), Expression("jNotificationDisplay.[IsFolderBrowse]")]
+        public Boolean? NotificationDisplayIsFolderBrowse
+        {
+            get { return Fields.NotificationDisplayIsFolderBrowse[this]; }
+            set { Fields.NotificationDisplayIsFolderBrowse[this] = value; }
+        }
+
+        [DisplayName("Notification Display Is Add Attachments"), Expression("jNotificationDisplay.[IsAddAttachments]")]
+        public Boolean? NotificationDisplayIsAddAttachments
+        {
+            get { return Fields.NotificationDisplayIsAddAttachments[this]; }
+            set { Fields.NotificationDisplayIsAddAttachments[this] = value; }
+        }
+
+        [DisplayName("Notification Display Is Collapsible"), Expression("jNotificationDisplay.[IsCollapsible]")]
+        public Boolean? NotificationDisplayIsCollapsible
+        {
+            get { return Fields.NotificationDisplayIsCollapsible[this]; }
+            set { Fields.NotificationDisplayIsCollapsible[this] = value; }
+        }
+
+        [DisplayName("Container Display Container Display Name"), Expression("jContainerDisplay.[ContainerDisplayName]")]
+        public String ContainerDisplayContainerDisplayName
+        {
+            get { return Fields.ContainerDisplayContainerDisplayName[this]; }
+            set { Fields.ContainerDisplayContainerDisplayName[this] = value; }
+        }
+
+        [DisplayName("Container Display Background Color"), Expression("jContainerDisplay.[BackgroundColor]")]
+        public String ContainerDisplayBackgroundColor
+        {
+            get { return Fields.ContainerDisplayBackgroundColor[this]; }
+            set { Fields.ContainerDisplayBackgroundColor[this] = value; }
+        }
+
+        [DisplayName("Container Display Border Style"), Expression("jContainerDisplay.[BorderStyle]")]
+        public Int32? ContainerDisplayBorderStyle
+        {
+            get { return Fields.ContainerDisplayBorderStyle[this]; }
+            set { Fields.ContainerDisplayBorderStyle[this] = value; }
+        }
+
+        [DisplayName("Container Display Font"), Expression("jContainerDisplay.[Font]")]
+        public String ContainerDisplayFont
+        {
+            get { return Fields.ContainerDisplayFont[this]; }
+            set { Fields.ContainerDisplayFont[this] = value; }
+        }
+
+        [DisplayName("Container Display Font Color Selected"), Expression("jContainerDisplay.[FontColorSelected]")]
+        public String ContainerDisplayFontColorSelected
+        {
+            get { return Fields.ContainerDisplayFontColorSelected[this]; }
+            set { Fields.ContainerDisplayFontColorSelected[this] = value; }
+        }
+
+        [DisplayName("Container Display Font Color Unselected"), Expression("jContainerDisplay.[FontColorUnselected]")]
+        public String ContainerDisplayFontColorUnselected
+        {
+            get { return Fields.ContainerDisplayFontColorUnselected[this]; }
+            set { Fields.ContainerDisplayFontColorUnselected[this] = value; }
+        }
+
+        [DisplayName("Container Display Activation"), Expression("jContainerDisplay.[Activation]")]
+        public Int32? ContainerDisplayActivation
+        {
+            get { return Fields.ContainerDisplayActivation[this]; }
+            set { Fields.ContainerDisplayActivation[this] = value; }
+        }
+
+        [DisplayName("Container Display Is Open In New Window"), Expression("jContainerDisplay.[IsOpenInNewWindow]")]
+        public Boolean? ContainerDisplayIsOpenInNewWindow
+        {
+            get { return Fields.ContainerDisplayIsOpenInNewWindow[this]; }
+            set { Fields.ContainerDisplayIsOpenInNewWindow[this] = value; }
+        }
+
+        [DisplayName("Container Display Is Tooltip"), Expression("jContainerDisplay.[IsTooltip]")]
+        public Boolean? ContainerDisplayIsTooltip
+        {
+            get { return Fields.ContainerDisplayIsTooltip[this]; }
+            set { Fields.ContainerDisplayIsTooltip[this] = value; }
+        }
+
+        [DisplayName("Container Display Is Horizontal Scroll Bar"), Expression("jContainerDisplay.[IsHorizontalScrollBar]")]
+        public Boolean? ContainerDisplayIsHorizontalScrollBar
+        {
+            get { return Fields.ContainerDisplayIsHorizontalScrollBar[this]; }
+            set { Fields.ContainerDisplayIsHorizontalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Container Display Is Vertical Scroll Bar"), Expression("jContainerDisplay.[IsVerticalScrollBar]")]
+        public Boolean? ContainerDisplayIsVerticalScrollBar
+        {
+            get { return Fields.ContainerDisplayIsVerticalScrollBar[this]; }
+            set { Fields.ContainerDisplayIsVerticalScrollBar[this] = value; }
+        }
+
+        [DisplayName("Container Display Alignment"), Expression("jContainerDisplay.[Alignment]")]
+        public Int32? ContainerDisplayAlignment
+        {
+            get { return Fields.ContainerDisplayAlignment[this]; }
+            set { Fields.ContainerDisplayAlignment[this] = value; }
+        }
+
+        [DisplayName("Container Display Is Collapsible"), Expression("jContainerDisplay.[IsCollapsible]")]
+        public Boolean? ContainerDisplayIsCollapsible
+        {
+            get { return Fields.ContainerDisplayIsCollapsible[this]; }
+            set { Fields.ContainerDisplayIsCollapsible[this] = value; }
+        }
+
+        IIdField IIdRow.IdField
+        {
+            get { return Fields.ViewsId; }
+        }
+
+        StringField INameRow.NameField
+        {
+            get { return Fields.ViewName; }
+        }
+
+        public static readonly RowFields Fields = new RowFields().Init();
+
+        public ViewsRow()
+            : base(Fields)
+        {
+        }
+
+        public class RowFields : RowFieldsBase
+        {
+            public Int32Field ViewsId;
+            public Int32Field ModuleId;
+            public StringField ViewName;
+            public BooleanField IsAccessFieldWise;
+            public Int32Field StatusId;
+            public Int32Field CreatedBy;
+            public DateTimeField CreatedDate;
+            public Int32Field UpdatedBy;
+            public DateTimeField UpdatedDate;
+            public BooleanField IsMachineSettings;
+            public BooleanField IsMachineSummary;
+            public BooleanField IslabelRoll;
+            public BooleanField IsCommandPanel;
+            public BooleanField IsFactorySetting;
+            public Int32Field DisplayObjectTypeId;
+            public Int32Field MachineId;
+            public Int32Field ListDisplayId;
+            public Int32Field FormDisplayId;
+            public Int32Field ButtonDisplayId;
+            public Int32Field RealtimeParameterDisplayId;
+            public Int32Field LineChartDisplayId;
+            public Int32Field PieChartDisplayId;
+            public Int32Field TreeDisplayId;
+            public Int32Field AttachmentDisplayId;
+            public Int32Field AlarmDisplayId;
+            public Int32Field NotificationDisplayId;
+            public Int32Field ContainerDisplayId;
+
+            public Int32Field ViewsModuleId;
+            public StringField ViewsViewName;
+            public BooleanField ViewsIsAccessFieldWise;
+            public Int32Field ViewsStatusId;
+            public Int32Field ViewsCreatedBy;
+            public DateTimeField ViewsCreatedDate;
+            public Int32Field ViewsUpdatedBy;
+            public DateTimeField ViewsUpdatedDate;
+            public BooleanField ViewsIsMachineSettings;
+            public BooleanField ViewsIsMachineSummary;
+            public BooleanField ViewsIslabelRoll;
+            public BooleanField ViewsIsCommandPanel;
+            public BooleanField ViewsIsFactorySetting;
+            public Int32Field ViewsDisplayObjectTypeId;
+            public Int32Field ViewsMachineId;
+            public Int32Field ViewsListDisplayId;
+            public Int32Field ViewsFormDisplayId;
+            public Int32Field ViewsButtonDisplayId;
+            public Int32Field ViewsRealtimeParameterDisplayId;
+            public Int32Field ViewsLineChartDisplayId;
+            public Int32Field ViewsPieChartDisplayId;
+            public Int32Field ViewsTreeDisplayId;
+            public Int32Field ViewsAttachmentDisplayId;
+            public Int32Field ViewsAlarmDisplayId;
+            public Int32Field ViewsNotificationDisplayId;
+            public Int32Field ViewsContainerDisplayId;
+
+            public StringField ModuleModuleName;
+            public Int32Field ModuleMachineId;
+            public Int32Field ModuleStatusId;
+            public Int32Field ModuleCreatedBy;
+            public DateTimeField ModuleCreatedDate;
+            public Int32Field ModuleUpdatedBy;
+            public DateTimeField ModuleUpdatedDate;
+            public Int32Field ModuleSequence;
+            public StringField ModuleEquipmentId;
+            public StringField ModuleSerialNumber;
+
+            public StringField StatusStatusName;
+
+            public StringField CreatedByEmployeeId;
+            public StringField CreatedByFirstName;
+            public StringField CreatedByLastName;
+            public Int32Field CreatedByDepartmentId;
+            public StringField CreatedByDesignation;
+            public Int32Field CreatedByMobileCode;
+            public Int64Field CreatedByMobileNumber;
+            public StringField CreatedByEmail;
+            public StringField CreatedByUsername;
+            public StringField CreatedByPasswordHash;
+            public StringField CreatedByPasswordSalt;
+            public StringField CreatedByUserImage;
+            public StringField CreatedByAddress;
+            public Int32Field CreatedByCityId;
+            public StringField CreatedByPinCode;
+            public Int32Field CreatedByRoleId;
+            public DateTimeField CreatedByPasswordExpiryDate;
+            public BooleanField CreatedByIsForgotPassword;
+            public BooleanField CreatedByIsPasswordChangeOnLogin;
+            public BooleanField CreatedByIsUserHidden;
+            public DateTimeField CreatedByBirthDate;
+            public Int32Field CreatedByStatusId;
+            public Int32Field CreatedBy1;
+            public DateTimeField CreatedByCreatedDate;
+            public Int32Field CreatedByUpdatedBy;
+            public DateTimeField CreatedByUpdatedDate;
+            public Int32Field CreatedByQuestionId;
+            public StringField CreatedByQuestionAns;
+            public BooleanField CreatedByIsLockOut;
+            public DateTimeField CreatedByLockOutDateTime;
+            public Int32Field CreatedByLogInAttempt;
+            public BooleanField CreatedByIsActiveDirectory;
+            public StringField CreatedByMachineId;
+            public StringField CreatedByRecordAddedSource;
+
+            public StringField UpdatedByEmployeeId;
+            public StringField UpdatedByFirstName;
+            public StringField UpdatedByLastName;
+            public Int32Field UpdatedByDepartmentId;
+            public StringField UpdatedByDesignation;
+            public Int32Field UpdatedByMobileCode;
+            public Int64Field UpdatedByMobileNumber;
+            public StringField UpdatedByEmail;
+            public StringField UpdatedByUsername;
+            public StringField UpdatedByPasswordHash;
+            public StringField UpdatedByPasswordSalt;
+            public StringField UpdatedByUserImage;
+            public StringField UpdatedByAddress;
+            public Int32Field UpdatedByCityId;
+            public StringField UpdatedByPinCode;
+            public Int32Field UpdatedByRoleId;
+            public DateTimeField UpdatedByPasswordExpiryDate;
+            public BooleanField UpdatedByIsForgotPassword;
+            public BooleanField UpdatedByIsPasswordChangeOnLogin;
+            public BooleanField UpdatedByIsUserHidden;
+            public DateTimeField UpdatedByBirthDate;
+            public Int32Field UpdatedByStatusId;
+            public Int32Field UpdatedByCreatedBy;
+            public DateTimeField UpdatedByCreatedDate;
+            public Int32Field UpdatedBy1;
+            public DateTimeField UpdatedByUpdatedDate;
+            public Int32Field UpdatedByQuestionId;
+            public StringField UpdatedByQuestionAns;
+            public BooleanField UpdatedByIsLockOut;
+            public DateTimeField UpdatedByLockOutDateTime;
+            public Int32Field UpdatedByLogInAttempt;
+            public BooleanField UpdatedByIsActiveDirectory;
+            public StringField UpdatedByMachineId;
+            public StringField UpdatedByRecordAddedSource;
+
+            public Int32Field MachineMachineLineId;
+            public StringField MachineMachineName;
+            public StringField MachineModelNumber;
+            public StringField MachineSerialNumber;
+            public StringField MachineMake;
+            public Int32Field MachineYear;
+            public StringField MachinePlcMake;
+            public StringField MachinePlcModelNumber;
+            public StringField MachinePlcSerialNumber;
+            public StringField MachinePlcAddress;
+            public StringField MachineAccessIpAddress;
+            public Int32Field MachineMachineSequence;
+            public ByteArrayField MachineMachineImage;
+            public Int32Field MachineMachineTypeId;
+            public Int32Field MachineStatusId;
+            public StringField MachineDescription;
+            public Int32Field MachineCreatedBy;
+            public DateTimeField MachineCreatedDate;
+            public Int32Field MachineUpdatedBy;
+            public DateTimeField MachineUpdatedDate;
+            public StringField MachineEquipmentId;
+            public Int32Field MachineTimerForAlarm;
+            public BooleanField MachineIsactive;
+            public BooleanField MachineIsShowStatistics;
+            public StringField MachineRecordAddedSource;
+            public BooleanField MachineIsRealTime;
+            public Int32Field MachineTableId;
+            public StringField MachineTableName;
+
+            public StringField ListDisplayBackgroundColor;
+            public Int32Field ListDisplayBorderStyle;
+            public BooleanField ListDisplayCheckbox;
+            public StringField ListDisplayFont;
+            public StringField ListDisplayFontColor;
+            public Int32Field ListDisplayFontSize;
+            public BooleanField ListDisplayFullRowSelect;
+            public BooleanField ListDisplayGridlines;
+            public BooleanField ListDisplayUseWaitCursorOnClick;
+            public Int32Field ListDisplayActivation;
+            public Int32Field ListDisplayAlignment;
+            public Int32Field ListDisplaySortingType;
+            public BooleanField ListDisplaySortAscDesc;
+            public BooleanField ListDisplayMultiSelect;
+            public BooleanField ListDisplayAutoResize;
+            public BooleanField ListDisplayCollapsible;
+            public Int32Field ListDisplayViewId;
+            public StringField ListDisplayListDisplayName;
+
+            public StringField FormDisplayFormDisplayName;
+            public StringField FormDisplayBackgroundColor;
+            public Int32Field FormDisplayBorderStyle;
+            public BooleanField FormDisplayIsCheckbox;
+            public StringField FormDisplayFont;
+            public StringField FormDisplayFontColorSelected;
+            public StringField FormDisplayFontColorUnselected;
+            public Int32Field FormDisplayActivation;
+            public Int32Field FormDisplayAlignment;
+            public BooleanField FormDisplayIsTooltip;
+            public BooleanField FormDisplayIsHorizontalScrollBar;
+            public BooleanField FormDisplayIsVerticalScrollBar;
+            public BooleanField FormDisplayIsCollapsible;
+
+            public StringField ButtonDisplayButtonDisplayName;
+            public StringField ButtonDisplayBackgroundColor;
+            public Int32Field ButtonDisplayBorderStyle;
+            public StringField ButtonDisplayFont;
+            public StringField ButtonDisplayFontColorSelected;
+            public StringField ButtonDisplayFontColorUnselected;
+            public Int32Field ButtonDisplayActivation;
+            public Int32Field ButtonDisplayAlignment;
+            public BooleanField ButtonDisplayIsTooltip;
+            public BooleanField ButtonDisplayIsHorizontalScrollBar;
+            public BooleanField ButtonDisplayIsVerticalScrollBar;
+            public BooleanField ButtonDisplayIsCollapsible;
+
+            public StringField RealtimeParameterDisplayRealtimeParameterDisplayName;
+            public StringField RealtimeParameterDisplayBackgroundColor;
+            public Int32Field RealtimeParameterDisplayBorderStyle;
+            public StringField RealtimeParameterDisplayFont;
+            public StringField RealtimeParameterDisplayFontColor;
+            public Int32Field RealtimeParameterDisplayAlignment;
+            public BooleanField RealtimeParameterDisplayIsTooltip;
+            public BooleanField RealtimeParameterDisplayIsHorizontalScrollBar;
+            public BooleanField RealtimeParameterDisplayIsVerticalScrollBar;
+            public BooleanField RealtimeParameterDisplayIsCollapsible;
+
+            public StringField LineChartDisplayLineChartDisplayName;
+            public StringField LineChartDisplayBackgroundColor;
+            public Int32Field LineChartDisplayBorderStyle;
+            public StringField LineChartDisplayFont;
+            public StringField LineChartDisplayFontColor;
+            public Int32Field LineChartDisplayAlignment;
+            public BooleanField LineChartDisplayIsTooltip;
+            public BooleanField LineChartDisplayIsHorizontalScrollBar;
+            public BooleanField LineChartDisplayIsVerticalScrollBar;
+            public BooleanField LineChartDisplayIsCollapsible;
+            public BooleanField LineChartDisplayIsLegends;
+            public BooleanField LineChartDisplayIsGridlines;
+            public StringField LineChartDisplayGridlineColor;
+            public BooleanField LineChartDisplayIsRealtime;
+            public StringField LineChartDisplayAxisColor;
+
+            public StringField PieChartDisplayPieChartDisplayName;
+            public StringField PieChartDisplayBackgroundColor;
+            public Int32Field PieChartDisplayBorderStyle;
+            public StringField PieChartDisplayFont;
+            public StringField PieChartDisplayFontColor;
+            public BooleanField PieChartDisplayIsLegends;
+            public Int32Field PieChartDisplayLegendFontSize;
+            public BooleanField PieChartDisplayIsShowValuesAsPercentage;
+            public BooleanField PieChartDisplayIsShowTotal;
+            public Int32Field PieChartDisplayAlignment;
+            public BooleanField PieChartDisplayIsTooltip;
+            public BooleanField PieChartDisplayIsHorizontalScrollBar;
+            public BooleanField PieChartDisplayIsVerticalScrollBar;
+            public BooleanField PieChartDisplayIsRealtime;
+
+            public StringField TreeDisplayTreeDisplayName;
+            public StringField TreeDisplayBackgroundColor;
+            public Int32Field TreeDisplayBorderStyle;
+            public StringField TreeDisplayFont;
+            public StringField TreeDisplayFontColor;
+            public BooleanField TreeDisplayIsFullRowSelect;
+            public StringField TreeDisplayLineColor;
+            public Int32Field TreeDisplayDefaultView;
+            public Int32Field TreeDisplayAlignment;
+            public BooleanField TreeDisplayIsTooltip;
+            public BooleanField TreeDisplayIsHorizontalScrollBar;
+            public BooleanField TreeDisplayIsVerticalScrollBar;
+            public BooleanField TreeDisplayIsRealtime;
+
+            public StringField AttachmentDisplayAttachmentDisplayName;
+            public StringField AttachmentDisplayBackgroundColor;
+            public Int32Field AttachmentDisplayBorderStyle;
+            public BooleanField AttachmentDisplayIsCheckbox;
+            public StringField AttachmentDisplayFont;
+            public StringField AttachmentDisplayFontColorSelected;
+            public StringField AttachmentDisplayFontColorUnselected;
+            public Int32Field AttachmentDisplayActivation;
+            public BooleanField AttachmentDisplayIsOpenInNewWindow;
+            public BooleanField AttachmentDisplayIsTooltip;
+            public BooleanField AttachmentDisplayIsHorizontalScrollBar;
+            public BooleanField AttachmentDisplayIsVerticalScrollBar;
+            public Int32Field AttachmentDisplayAlignment;
+            public BooleanField AttachmentDisplayIsFolderBrowse;
+            public BooleanField AttachmentDisplayIsAddAttachments;
+            public BooleanField AttachmentDisplayIsCollapsible;
+
+            public StringField AlarmDisplayAlarmDisplayName;
+            public StringField AlarmDisplayBackgroundColor;
+            public Int32Field AlarmDisplayBorderStyle;
+            public BooleanField AlarmDisplayIsCheckbox;
+            public StringField AlarmDisplayFont;
+            public StringField AlarmDisplayFontColorSelected;
+            public StringField AlarmDisplayFontColorUnselected;
+            public StringField AlarmDisplayCautionColor;
+            public StringField AlarmDisplayWarningColor;
+            public StringField AlarmDisplayEmergencyColor;
+            public Int32Field AlarmDisplayActivation;
+            public Int32Field AlarmDisplayAppearance;
+            public BooleanField AlarmDisplayIsOpenInNewWindow;
+            public BooleanField AlarmDisplayIsTooltip;
+            public BooleanField AlarmDisplayIsHorizontalScrollBar;
+            public BooleanField AlarmDisplayIsVerticalScrollBar;
+            public Int32Field AlarmDisplayAlignment;
+            public BooleanField AlarmDisplayIsFolderBrowse;
+            public BooleanField AlarmDisplayIsAddAttachments;
+            public BooleanField AlarmDisplayIsCollapsible;
+
+            public StringField NotificationDisplayNotificationDisplayName;
+            public StringField NotificationDisplayBackgroundColor;
+            public Int32Field NotificationDisplayBorderStyle;
+            public StringField NotificationDisplayFont;
+            public StringField NotificationDisplayFontColorSelected;
+            public StringField NotificationDisplayFontColorUnselected;
+            public Int32Field NotificationDisplayActivation;
+            public BooleanField NotificationDisplayIsOpenInNewWindow;
+            public BooleanField NotificationDisplayIsTooltip;
+            public BooleanField NotificationDisplayIsHorizontalScrollBar;
+            public BooleanField NotificationDisplayIsVerticalScrollBar;
+            public Int32Field NotificationDisplayAlignment;
+            public BooleanField NotificationDisplayIsFolderBrowse;
+            public BooleanField NotificationDisplayIsAddAttachments;
+            public BooleanField NotificationDisplayIsCollapsible;
+
+            public StringField ContainerDisplayContainerDisplayName;
+            public StringField ContainerDisplayBackgroundColor;
+            public Int32Field ContainerDisplayBorderStyle;
+            public StringField ContainerDisplayFont;
+            public StringField ContainerDisplayFontColorSelected;
+            public StringField ContainerDisplayFontColorUnselected;
+            public Int32Field ContainerDisplayActivation;
+            public BooleanField ContainerDisplayIsOpenInNewWindow;
+            public BooleanField ContainerDisplayIsTooltip;
+            public BooleanField ContainerDisplayIsHorizontalScrollBar;
+            public BooleanField ContainerDisplayIsVerticalScrollBar;
+            public Int32Field ContainerDisplayAlignment;
+            public BooleanField ContainerDisplayIsCollapsible;
+        }
+    }
+}

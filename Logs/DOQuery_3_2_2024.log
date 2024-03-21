@@ -1,0 +1,5 @@
+{"time":"2024-02-03T08:27","doName":"Attachment DO","dotype":"Attachments Display","logtype":"main","content":"open the DO edit modal","entity":"PLC-labelling machine","visibleColumns":[],"tableName":""}
+{"time":"2024-02-03T08:27","doName":"Attachment DO","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Actual Bottle Diameter-DLMk"}
+{"time":"2024-02-03T08:27","doName":"Attachment DO","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Actual gap length-DLM"}
+{"time":"2024-02-03T08:33","doName":"Attachment DO","dotype":"Attachments Display","logtype":"main","content":"open the DO edit modal","entity":"PLC-labelling machine","visibleColumns":[],"tableName":""}
+{"time":"2024-02-03T08:33","doName":"Attachment DO","dotype":"Attachments Display","logtype":"drag and drop","content":"drop a ef on a mainDO","entity":"PLC-labelling machine","ef":"Actual Bottle Diameter-DLMk"}
